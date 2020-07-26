@@ -5,9 +5,9 @@ permalink: /about/
 main_nav: true
 ---
 
-![alt text]({{ site.baseurl }}/assets/profile-placeholder.gif "Profile Picture"){:.profile}
+![alt text]({{ site.baseurl }}/assets/profile-placeholder.png "Profile Picture"){:.profile}
 
-Hi and welcome ! My name is [Santiago Schumacher], and I'm an Information Systems Engineer for Argentina. 
+Hi and welcome ! My name is <i>Santiago Schumacher</i>, and I'm an Information Systems Engineer for Argentina. 
 This is my first time dabbling into the Blogging community, and, as a Test Automation, I intent to write about tips, best practices, frameworks and other things I've learned along the way in over 5 years experience in the field.
 If you have doubts, questions, ideas or corncers feel free to hit me up ! My contact information is posted below.
 

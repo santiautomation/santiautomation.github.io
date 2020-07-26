@@ -14,7 +14,7 @@ subtitle: "A blog to share cool test automation tips, best practices and framewo
 email: santiagoschumacher2@gmail.com
 name: Santiago Lorenzo Schumacher
 description: >
-  A simple yet classy theme for your Jekyll website or blog.
+  A Blog to share Test Automation best practices oriented towards complex scenarios.
 # Base URL of site (i.e. /blog). It should always start with a slash,
 # and never end with a slash. Set it to a blank value if hosting at the
 # root of your server.
@@ -47,7 +47,6 @@ jekyll-archives:
     tag: '/tag/:name/'
 
 # Disqus comments
-# disqus_shortname: bencentra
 
 # Google analytics
 # ga_tracking_id: "UA-XXXX-1"
@@ -80,14 +79,14 @@ social:
   - name: GitHub
     icon: github
     username: sschumacher
-    url: https://github.com/sschumacher
+    url: https://github.com/santiautomation
     desc: Fork me on GitHub
     share: false
 
   - name: LinkedIn
     icon: linkedin
     username: Santiago Schumacher
-    url: https://www.linkedin.com/in/santiago-schumacher-860ba250/
+    url: https://www.linkedin.com/in/santiago-schumacher/
     desc: Connect with me on LinkedIn
     share: true
 
@@ -101,7 +100,3 @@ protocols:
     fb_image_type: "image/png"
 
     twitter_image: "/assets/logo.png"
-
-    os_repo: "https://github.com/bencentra/centrarium.com"
-    os_rcs_type: "git"
-    os_src: "git@github.com:bencentra/centrarium.com.git"
