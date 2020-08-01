@@ -4,4 +4,6 @@ group :jekyll_plugins do
   gem "github-pages", "~> 206"
   gem "jekyll-paginate-v2"
   gem "jekyll-feed"
+  gem "jekyll-sitemap"
+  gem "jekyll-archives"
 end
