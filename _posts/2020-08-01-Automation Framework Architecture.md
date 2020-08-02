@@ -3,7 +3,7 @@ layout: post
 title:  "Test Automation Framework - The main Components"
 date:   2020-07-27T14:25:52-05:00
 author: Santiago L. Schumacher
-categories: Framework
+categories: framework
 ---
 
 <h1>Setting the right building blocks for your Framework</h1>
