@@ -1,13 +1,8 @@
-# External plugins
-# See http://ixti.net/software/2013/01/28/using-jekyll-plugins-on-github-pages.html for making `jekyll archives` work.
 plugins:
-  - jekyll-archives # Sorry, not GitHub pages friendly!
-  - jekyll-sitemap
-  - jekyll-paginate-v2
-  - jekyll-feed
-  
-exclude:
-  - "/vendor/"
+   - jekyll-archives # Sorry, not GitHub pages friendly!
+   - jekyll-sitemap
+   - jekyll-paginate-v2
+   - jekyll-feed
 
 # Site settings
 title: Robust Test Automation with Java
@@ -15,7 +10,7 @@ subtitle: "A blog to share cool test automation tips, best practices and framewo
 email: santiagoschumacher2@gmail.com
 name: Santiago Lorenzo Schumacher
 description: >
-  A Blog to share Test Automation best practices oriented towards complex scenarios.
+ A Blog to share Test Automation best practices oriented towards complex scenarios.
 # Base URL of site (i.e. /blog). It should always start with a slash,
 # and never end with a slash. Set it to a blank value if hosting at the
 # root of your server.
@@ -48,7 +43,6 @@ jekyll-archives:
   permalinks:
     category: '/category/:name/'
     tag: '/tag/:name/'
-
 # Disqus comments
 
 # Google analytics
@@ -56,15 +50,15 @@ jekyll-archives:
 
 # Category descriptions (for archive pages)
 descriptions:
+
   - cat: Introduction
     desc: "Welcome and about myself"
-
+   
   - cat: Miscellaneous
-    desc: "General tips, best practices and other tools not included in 'Framework'"
-    
+    desc: "General tips, best practices and other tools not included in Framework"
+   
   - cat: Framework
-  desc: "Posts describing how to build (theory and code) a robust test automation framework"
-
+    desc: "Posts describing how to build (theory and code) a robust test automation framework"
 # Social icons and sharing options
 #
 # Social settings are used in two places:
