@@ -3,7 +3,7 @@ layout: post
 title:  "Step 1: Choosing what to Automate"
 date:   2020-07-25T14:25:52-05:00
 author: Santiago L. Schumacher
-categories: Miscellaneous
+categories: miscellaneous
 ---
 
 During my career, I've performed multiple interviews to aspiring Test Automation Engineers. They've ranged from IT people such as programmers or manual testers, looking 

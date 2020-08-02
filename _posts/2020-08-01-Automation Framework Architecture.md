@@ -39,7 +39,7 @@ You open your Notebook and find the following notes:
   <li>Communication is really important for your Client. They mentioned that they spend many hours a day on <strong>Slack</strong>, and no major decisions are
   taken without Emailing and approvals for memo.
   That means our framework will most definitely need to send test results to both: Email and Slack.</li>
-  <li>They use BrowserStack so the manual testers are able to test different browsers and mobile deviced on the cloud. We will add integration to that as well.</li>  <-- agregar link -->
+  <li>They use <a href='https://www.browserstack.com/'>BrowserStack</a> so the manual testers are able to test different browsers and mobile deviced on the cloud. We will add integration to that as well.</li>
   <li>API and Integration tests is a must, as the Test Automation Pyramid tells us. The clear is option is here is adding the <strong>RestAssured</strong> dependency to our list.</li>
   <li>They use Jenkins, so it's important for us to leverage everything that tool provides.</li>
   <li>Reports: The standard reports offered by runners such as TestNG, JUnit, or Maven's Surefire plugin are simply not good enough. They can be difficult to understand, not too 

@@ -3,7 +3,7 @@ layout: post
 title:  "Welcome - First Post"
 date:   2020-06-01T14:25:52-05:00
 author: Santiago L. Schumacher
-categories: Introduction
+categories: introduction
 ---
 
 <h1>Welcome !</h1>
