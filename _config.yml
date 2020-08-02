@@ -3,6 +3,10 @@ plugins:
    - jekyll-sitemap
    - jekyll-paginate-v2
    - jekyll-feed
+   - github-pages
+
+exclude:
+  - "/vendor/"
 
 # Site settings
 title: Robust Test Automation with Java
@@ -15,7 +19,7 @@ description: >
 # and never end with a slash. Set it to a blank value if hosting at the
 # root of your server.
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "santiautomation.github.io" # the base hostname & protocol for your site
+url: "santiautomation.github.io"
 cover: "/assets/header_image.jpg"
 logo: "/assets/logo.png"
 
@@ -49,16 +53,7 @@ jekyll-archives:
 # ga_tracking_id: "UA-XXXX-1"
 
 # Category descriptions (for archive pages)
-descriptions:
 
-  - cat: Introduction
-    desc: "Welcome and about myself"
-   
-  - cat: Miscellaneous
-    desc: "General tips, best practices and other tools not included in Framework"
-   
-  - cat: Framework
-    desc: "Posts describing how to build (theory and code) a robust test automation framework"
 # Social icons and sharing options
 #
 # Social settings are used in two places:
