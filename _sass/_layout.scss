@@ -217,7 +217,7 @@ pre code.hljs {
 	// Remove this to make header scrollable again
 	margin-top: 66px;
 	.wrapper {
-		@include outer-container;
+		@include outer-container(55em);
 		padding: 1em;
 	}
 	/*
@@ -367,6 +367,18 @@ pre code.hljs {
  		}
 	}
 }
+
+.btn-copy-code {
+    color: #212529;
+    padding-right: 5px;
+    background: #dededc;
+    border: 0;
+    font-size: 14px;
+    &:hover {
+      cursor: pointer;
+      color: #3292a6;
+    }
+  }
 
 /*
 *	Footer
