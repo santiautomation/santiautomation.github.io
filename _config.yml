@@ -19,7 +19,7 @@ description: >
 # and never end with a slash. Set it to a blank value if hosting at the
 # root of your server.
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "santiautomation.github.io"
+url: "https://santiautomation.github.io/"
 cover: "/assets/header_image.jpg"
 logo: "/assets/logo.png"
 
