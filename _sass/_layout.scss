@@ -378,7 +378,15 @@ pre code.hljs {
       cursor: pointer;
       color: #3292a6;
     }
-  }
+ }
+
+.tips-container {
+	background-color: #90EE90;
+	border: 1px solid #ADFF2F;
+	padding: 10px;
+	font-style: italic;
+	border-radius: 15px;
+}
 
 /*
 *	Footer
