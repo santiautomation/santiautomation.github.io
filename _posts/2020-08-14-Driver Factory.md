@@ -58,7 +58,8 @@ public abstract class DriverManager {
 	public void quitDriver() {
 		if (null != drivers.get()) {
 			try {
-				drivers.get().quit();
+				drivers.get().quit(); // First quit WebDriver session gracefully
+				drivers.remove(); // Remove WebDriver reference from the ThreadLocal variable.
 			} catch (Exception e) {
 				System.err("Unable to gracefully quit WebDriver.", e); // We'll replace this with actual Loggers later - don't worry !
 			}
