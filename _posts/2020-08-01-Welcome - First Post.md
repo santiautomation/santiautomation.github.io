@@ -38,3 +38,11 @@ Our framework will include the following, including, but not limited to:
   <li>Custom Reporting, Assertions, and Integration</li>
   <li>Many awesome libraries that'll make our lifes easier</li>
 </ul>
+<br/>
+<h3>Access to the Code</h3>
+<i>09/09/2020 Update: I've created a repository for anyone to take a look at the entire framework.</i><br/>
+You can find and clone the Test Automation Framework at: <a href='https://github.com/santiautomation/santi-automation-framework'>Santi-Automation-Framework</a>
+<br/>
+To add your ideas or help fix my mistakes, feel free to create a Pull Request and I will review it.
+
+Thanks for your support !
