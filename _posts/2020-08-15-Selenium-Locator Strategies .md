@@ -48,7 +48,11 @@ I do not intend to go against the grain here, however, keep the following in min
 
 <section class="tips-container">
     <div class="tip"> <strong> Tip: </strong><br/>{% raw %}When using Selenium's Page Factory, replace your wordy <code>@FindBy(how = How.ID, using = "recipient-email")</code>, 
-	with the shorter, more readable form <code>@FindBy(id = "recipient-email")</code> {% endraw %}
+	with the shorter, more readable form <code>@FindBy(id = "recipient-email")</code> <br/>
+	<strong>Did you know ? </strong>
+	You can even skip the @FindBy entirely, by naming your WebElement the same as its name or ID. For example:
+	<code>private WebElement username</code> will be translated by Selenium to the Locator:  <code>//*[@id='username'] OR //*[@name='username']</code>
+	{% endraw %}.
 	</div>
 </section>
 <br/>
@@ -89,8 +93,8 @@ Another very important tip from me is, if you're using xpath, never use the "<i>
 Take a little time to learn XPATH by yourself and write a meaningful locator !<br/> It might take some time getting used to it, but it will save you countless hours in the long run.
 
 <section class="tips-container">
-    <div class="tip"> <strong> Tip: </strong><br/>{% raw %}Always use Page Factory (ie: Selenium's @FindBy annotation), with the only 2 expections being:<br/>
-	1 - You want dynamic locators, for example, creating a method which receives an Username as a paramter, and the locator being dependant, such as <code>driver.findElement(By.xpath(String.format("//p[contains(text(), '%s')]", user)))</code>{% endraw %}<br/>
+    <div class="tip"> <strong> Tip: </strong><br/>{% raw %}Always use Page Factory (ie: Selenium's @FindBy annotation), with the only 2 exceptions being:<br/>
+	1 - You want dynamic locators, for example, creating a method which receives an Username as a parameter, and the locator being dependant, such as <code>driver.findElement(By.xpath(String.format("//p[contains(text(), '%s')]", user)))</code>{% endraw %}<br/>
 	2 - You have a WebElement and need to find its childs --> <code>myWebElement.findElement(By.xpath(".//a[@class='test']"))</code> - another common use case where Page Factory can't help you.<br/>
 	</div>
 </section>
