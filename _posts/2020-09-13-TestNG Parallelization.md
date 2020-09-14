@@ -45,7 +45,7 @@ This is where TestNG <strong>parallel</strong> comes in.
 Before naming the options we have let's start by explaining how TestNG deals with parallelization internally by looking at the following diagram:
 
 <br/>
-![TestNG Parallelization](/assets/images/TestNGParallel.png)
+![TestNG Parallelization](/assets/images/TestNGParallel.PNG)
 <br/>
 
 With the picture in mind, let's see what TestNG's <a href='https://testng.org/doc/documentation-main.html#parallel-running'>official documentation<a/> has to say, and I'll try to explain in my own words so it's clearer.
