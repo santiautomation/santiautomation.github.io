@@ -49,7 +49,7 @@ jekyll-archives:
     category: '/category/:name/'
     tag: '/tag/:name/'
 # Disqus comments
-
+disqus_shortname: https-santiautomation-github-io
 # Google analytics
 ga_tracking_id: "G-2GS3X7QMNJ"
 
