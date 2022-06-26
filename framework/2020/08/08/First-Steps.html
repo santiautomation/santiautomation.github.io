@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2GS3X7QMNJ"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'G-2GS3X7QMNJ');
+	</script>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Getting started building your own Framework</title>
+  <meta name="description" content="Your first step towards a robust Test Automation Framework">
+  
+  <meta name="author" content="Santiago Lorenzo Schumacher">
+  <meta name="copyright" content="&copy; Santiago Lorenzo Schumacher 2022">
+  
+
+  <!-- External libraries -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/monokai-sublime.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">
+
+  <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+  <link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  
+  <!-- Facebook OGP cards -->
+  <meta property="og:description" content="Your first step towards a robust Test Automation Framework" />
+  <meta property="og:url" content="https://santiautomation.github.io/framework/2020/08/08/First-Steps.html">
+  <meta property="og:site_name" content="Robust Test Automation with Java" />
+  <meta property="og:title" content="Getting started building your own Framework" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://santiautomation.github.io/assets/logo.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="632" />
+  <meta property="og:image:height" content="625" />
+  
+
+  
+  <!-- Twitter: card tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Getting started building your own Framework">
+  <meta name="twitter:description" content="Your first step towards a robust Test Automation Framework">
+  <meta name="twitter:image" content="https://santiautomation.github.io/assets/logo.png">
+  <meta name="twitter:url" content="https://santiautomation.github.io/framework/2020/08/08/First-Steps.html">
+  
+
+  
+
+  
+  
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Getting started building your own Framework | Robust Test Automation with Java</title>
+<meta name="generator" content="Jekyll v3.9.2" />
+<meta property="og:title" content="Getting started building your own Framework" />
+<meta name="author" content="Santiago L. Schumacher" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Your first step towards a robust Test Automation Framework" />
+<meta property="og:description" content="Your first step towards a robust Test Automation Framework" />
+<link rel="canonical" href="https://santiautomation.github.io/framework/2020/08/08/First-Steps.html" />
+<meta property="og:url" content="https://santiautomation.github.io/framework/2020/08/08/First-Steps.html" />
+<meta property="og:site_name" content="Robust Test Automation with Java" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-08-08T16:25:52-03:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Getting started building your own Framework" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Santiago L. Schumacher"},"dateModified":"2020-08-08T16:25:52-03:00","datePublished":"2020-08-08T16:25:52-03:00","description":"Your first step towards a robust Test Automation Framework","headline":"Getting started building your own Framework","mainEntityOfPage":{"@type":"WebPage","@id":"https://santiautomation.github.io/framework/2020/08/08/First-Steps.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://santiautomation.github.io/assets/logo.png"},"name":"Santiago L. Schumacher"},"url":"https://santiautomation.github.io/framework/2020/08/08/First-Steps.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+	
+  <!-- Site styles -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="https://santiautomation.github.io/framework/2020/08/08/First-Steps.html">
+	<link rel="alternate" type="application/rss+xml" title="Robust Test Automation with Java" href="https://santiautomation.github.io/feed.xml" />
+	
+	<!-- Tooltips -->
+	<script type="text/javascript">
+		window.tooltips = []
+	</script>
+</head>
+
+
+  <body>
+
+    <header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a href="/" class="logo">
+      
+      <img src="/assets/logo.png" alt="Robust Test Automation with Java">
+      
+    </a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+				
+	
+	<li class="nav-link"><a href="/about/">About</a>
+	
+
+	
+
+	
+
+	
+	<li class="nav-link"><a href="/posts/">Posts</a>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+        <div class="post">
+
+<div class="post-header-container " >
+  <div class="scrim ">
+    <header class="post-header">
+      <h1 class="title">Getting started building your own Framework</h1>
+      <p class="info">by <strong>Santiago L. Schumacher</strong></p>
+    </header>
+  </div>
+</div>
+
+<div class="wrapper">
+
+ <span class="page-divider">
+  <span class="one"></span>
+  <span class="two"></span>
+</span>
+ 
+
+<section class="post-meta">
+  <div class="post-date">August 8, 2020</div>
+  <div class="post-categories">
+  in 
+    
+    <a href="/category/framework">Framework</a>
+    
+  
+  </div>
+</section>
+
+<article class="post-content">
+  <h1>Your first step towards a robust Test Automation Framework</h1>
+
+<p>If you’ve been reading my first post on the framework category, you know we gave a rough overview of some of the capabilities the Client has asked of our framework.
+Feel free to navigate to my previous post and write them down if it’ll help you follow along my postings.</p>
+
+<p>This time around we’ll go ahead and get started with a little coding.</p>
+
+<h3>Requirements</h3>
+<ol>
+  <li>Java: Make sure <a href="https://java.com/en/download/help/download_options.xml">Java is correctly installed in your System</a>. We need to install the development kit (JDK). Remember to
+  confirm it was correctly installed by opening a Command line console and typying <code>java -version</code></li>
+  <li>Your favorite IDE. Personally, I use <a href="https://www.eclipse.org/downloads/">Eclipse</a> out of habit, but most developers lately have been inclining towards <a href="https://www.jetbrains.com/idea/download/">IntelliJ IDEA</a></li>
+  <li>Start a Repository. Being able to keep track of changes and work efficiently in teams is fundamental. GIT is the go-to choice here</li>
+</ol>
+
+<p><br />
+Create a new <strong>Maven</strong> project. When prompted to select an Archetype, for now we will stick with <code>maven-archetype-quickstart</code> as it will give you the structure we need.
+<br />
+At this point your Project looks something like this:</p>
+
+<p><br />
+<img src="/assets/images/MavenQuickstartArchetypeProject.PNG" alt="Project structure after first step" />
+<br /></p>
+
+<p>We will add all the code relevant to the Framework, such as the Loggers, a Base Test for the pre-post test configurations, listeners, utils, retry analyzers etc. in the <code>src/main/java</code> package.
+The  <code>src/main/test</code> package will only contain the Tests and Page Objects.</p>
+
+<p>Don’t sweat it if at this point you read a bunch of words you’re not familiar with as we will be explaining each one.</p>
+
+<p>Open the maven’s pom.xml file.
+Let’s copy the following content there for now (we will circle back to the file to add more things are needed)</p>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;project</span> <span class="na">xmlns=</span><span class="s">"http://maven.apache.org/POM/4.0.0"</span>
+	<span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span>
+	<span class="na">xsi:schemaLocation=</span><span class="s">"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;modelVersion&gt;</span>4.0.0<span class="nt">&lt;/modelVersion&gt;</span>
+	<span class="nt">&lt;groupId&gt;</span>io.github.santiautomation<span class="nt">&lt;/groupId&gt;</span> <span class="c">&lt;!-- Replace with your company/project names! --&gt;</span>
+	<span class="nt">&lt;artifactId&gt;</span>santi-test-framework<span class="nt">&lt;/artifactId&gt;</span>
+	<span class="nt">&lt;version&gt;</span>1.0.0<span class="nt">&lt;/version&gt;</span>
+	<span class="nt">&lt;packaging&gt;</span>jar<span class="nt">&lt;/packaging&gt;</span>
+
+	<span class="nt">&lt;properties&gt;</span>
+		<span class="nt">&lt;project.build.sourceEncoding&gt;</span>UTF-8<span class="nt">&lt;/project.build.sourceEncoding&gt;</span>
+		<span class="nt">&lt;project.reporting.outputEncoding&gt;</span>UTF-8<span class="nt">&lt;/project.reporting.outputEncoding&gt;</span>
+		<span class="nt">&lt;log4j.version&gt;</span>2.13.0<span class="nt">&lt;/log4j.version&gt;</span> <span class="c">&lt;!-- Putting repeated versions as a property makes for easier changes  --&gt;</span>
+	<span class="nt">&lt;/properties&gt;</span>
+
+	<span class="nt">&lt;dependencies&gt;</span>
+		<span class="nt">&lt;dependency&gt;</span> <span class="c">&lt;!-- Contains many awesome Utilities classes and Object definitions --&gt;</span>
+			<span class="nt">&lt;groupId&gt;</span>com.google.guava<span class="nt">&lt;/groupId&gt;</span>
+			<span class="nt">&lt;artifactId&gt;</span>guava<span class="nt">&lt;/artifactId&gt;</span>
+			<span class="nt">&lt;version&gt;</span>28.1-jre<span class="nt">&lt;/version&gt;</span>
+		<span class="nt">&lt;/dependency&gt;</span>
+		
+		<span class="nt">&lt;dependency&gt;</span> <span class="c">&lt;!-- Needed for the WebDriverManager --&gt;</span>
+			<span class="nt">&lt;groupId&gt;</span>org.apache.httpcomponents<span class="nt">&lt;/groupId&gt;</span>
+			<span class="nt">&lt;artifactId&gt;</span>httpclient<span class="nt">&lt;/artifactId&gt;</span>
+			<span class="nt">&lt;version&gt;</span>4.5.11<span class="nt">&lt;/version&gt;</span>
+		<span class="nt">&lt;/dependency&gt;</span>
+		
+		<span class="nt">&lt;dependency&gt;</span>
+			<span class="nt">&lt;groupId&gt;</span>org.testng<span class="nt">&lt;/groupId&gt;</span>
+			<span class="nt">&lt;artifactId&gt;</span>testng<span class="nt">&lt;/artifactId&gt;</span>
+			<span class="nt">&lt;version&gt;</span>7.1.0<span class="nt">&lt;/version&gt;</span>
+		<span class="nt">&lt;/dependency&gt;</span>
+
+		<span class="nt">&lt;dependency&gt;</span> <span class="c">&lt;!-- Logging Facade that we can use with Log4J --&gt;</span>
+		    <span class="nt">&lt;groupId&gt;</span>org.slf4j<span class="nt">&lt;/groupId&gt;</span>
+		    <span class="nt">&lt;artifactId&gt;</span>slf4j-log4j12<span class="nt">&lt;/artifactId&gt;</span>
+		    <span class="nt">&lt;version&gt;</span>1.7.30<span class="nt">&lt;/version&gt;</span>
+		    <span class="nt">&lt;scope&gt;</span>test<span class="nt">&lt;/scope&gt;</span>
+		<span class="nt">&lt;/dependency&gt;</span>
+		
+		<span class="nt">&lt;dependency&gt;</span> <span class="c">&lt;!-- Loggers ! --&gt;</span>
+			<span class="nt">&lt;groupId&gt;</span>org.apache.logging.log4j<span class="nt">&lt;/groupId&gt;</span>
+			<span class="nt">&lt;artifactId&gt;</span>log4j-api<span class="nt">&lt;/artifactId&gt;</span>
+			<span class="nt">&lt;version&gt;</span>${log4j.version}<span class="nt">&lt;/version&gt;</span>
+		<span class="nt">&lt;/dependency&gt;</span>
+		<span class="nt">&lt;dependency&gt;</span>
+			<span class="nt">&lt;groupId&gt;</span>org.apache.logging.log4j<span class="nt">&lt;/groupId&gt;</span>
+			<span class="nt">&lt;artifactId&gt;</span>log4j-core<span class="nt">&lt;/artifactId&gt;</span>
+			<span class="nt">&lt;version&gt;</span>${log4j.version}<span class="nt">&lt;/version&gt;</span>
+		<span class="nt">&lt;/dependency&gt;</span>
+		
+		<span class="nt">&lt;dependency&gt;</span> <span class="c">&lt;!-- Needed for API testing --&gt;</span>
+			<span class="nt">&lt;groupId&gt;</span>io.rest-assured<span class="nt">&lt;/groupId&gt;</span>
+			<span class="nt">&lt;artifactId&gt;</span>rest-assured<span class="nt">&lt;/artifactId&gt;</span>
+			<span class="nt">&lt;version&gt;</span>4.2.0<span class="nt">&lt;/version&gt;</span>
+			<span class="nt">&lt;exclusions&gt;</span>
+				<span class="nt">&lt;exclusion&gt;</span>
+					<span class="nt">&lt;groupId&gt;</span>org.apache.httpcomponents<span class="nt">&lt;/groupId&gt;</span>
+					<span class="nt">&lt;artifactId&gt;</span>httpclient<span class="nt">&lt;/artifactId&gt;</span>
+				<span class="nt">&lt;/exclusion&gt;</span>
+			<span class="nt">&lt;/exclusions&gt;</span>
+		<span class="nt">&lt;/dependency&gt;</span>
+		
+		<span class="nt">&lt;dependency&gt;</span>
+			<span class="nt">&lt;groupId&gt;</span>org.seleniumhq.selenium<span class="nt">&lt;/groupId&gt;</span>
+			<span class="nt">&lt;artifactId&gt;</span>selenium-java<span class="nt">&lt;/artifactId&gt;</span>
+			<span class="nt">&lt;version&gt;</span>4.0.0-alpha-4<span class="nt">&lt;/version&gt;</span> <span class="c">&lt;!-- Use this one or replace with the latest stable version --&gt;</span>
+		<span class="nt">&lt;/dependency&gt;</span>
+		
+		<span class="nt">&lt;dependency&gt;</span> <span class="c">&lt;!-- Mobile Testing --&gt;</span>
+			<span class="nt">&lt;groupId&gt;</span>io.appium<span class="nt">&lt;/groupId&gt;</span>
+			<span class="nt">&lt;artifactId&gt;</span>java-client<span class="nt">&lt;/artifactId&gt;</span>
+			<span class="nt">&lt;version&gt;</span>7.3.0<span class="nt">&lt;/version&gt;</span>
+			<span class="nt">&lt;exclusions&gt;</span> <span class="c">&lt;!-- To make sure we are getting the dependencies from only one place. Saves you a lot of headaches later --&gt;</span>
+				<span class="nt">&lt;exclusion&gt;</span>
+					<span class="nt">&lt;groupId&gt;</span>org.seleniumhq.selenium<span class="nt">&lt;/groupId&gt;</span>
+					<span class="nt">&lt;artifactId&gt;</span>selenium-support<span class="nt">&lt;/artifactId&gt;</span>
+				<span class="nt">&lt;/exclusion&gt;</span>
+				<span class="nt">&lt;exclusion&gt;</span>
+					<span class="nt">&lt;groupId&gt;</span>org.apache.httpcomponents<span class="nt">&lt;/groupId&gt;</span>
+					<span class="nt">&lt;artifactId&gt;</span>httpclient<span class="nt">&lt;/artifactId&gt;</span>
+				<span class="nt">&lt;/exclusion&gt;</span>
+				<span class="nt">&lt;exclusion&gt;</span>
+					<span class="nt">&lt;groupId&gt;</span>org.seleniumhq.selenium<span class="nt">&lt;/groupId&gt;</span>
+					<span class="nt">&lt;artifactId&gt;</span>selenium-api<span class="nt">&lt;/artifactId&gt;</span>
+				<span class="nt">&lt;/exclusion&gt;</span>
+				<span class="nt">&lt;exclusion&gt;</span>
+					<span class="nt">&lt;groupId&gt;</span>org.seleniumhq.selenium<span class="nt">&lt;/groupId&gt;</span>
+					<span class="nt">&lt;artifactId&gt;</span>selenium-java<span class="nt">&lt;/artifactId&gt;</span>
+				<span class="nt">&lt;/exclusion&gt;</span>
+			<span class="nt">&lt;/exclusions&gt;</span>
+		<span class="nt">&lt;/dependency&gt;</span>
+		
+		<span class="nt">&lt;dependency&gt;</span> 
+			<span class="nt">&lt;groupId&gt;</span>io.github.bonigarcia<span class="nt">&lt;/groupId&gt;</span>
+			<span class="nt">&lt;artifactId&gt;</span>webdrivermanager<span class="nt">&lt;/artifactId&gt;</span>
+			<span class="nt">&lt;version&gt;</span>3.8.1<span class="nt">&lt;/version&gt;</span>
+			<span class="nt">&lt;exclusions&gt;</span>
+				<span class="nt">&lt;exclusion&gt;</span>
+					<span class="nt">&lt;groupId&gt;</span>org.apache.httpcomponents<span class="nt">&lt;/groupId&gt;</span>
+					<span class="nt">&lt;artifactId&gt;</span>httpclient<span class="nt">&lt;/artifactId&gt;</span>
+				<span class="nt">&lt;/exclusion&gt;</span>
+			<span class="nt">&lt;/exclusions&gt;</span>
+		<span class="nt">&lt;/dependency&gt;</span>
+	<span class="nt">&lt;/dependencies&gt;</span>
+	
+	<span class="nt">&lt;build&gt;</span>
+		<span class="nt">&lt;resources&gt;</span>
+			<span class="nt">&lt;resource&gt;</span>
+				<span class="nt">&lt;directory&gt;</span>src/main/resources<span class="nt">&lt;/directory&gt;</span>
+				<span class="nt">&lt;filtering&gt;</span>true<span class="nt">&lt;/filtering&gt;</span>
+			<span class="nt">&lt;/resource&gt;</span>
+		<span class="nt">&lt;/resources&gt;</span>
+		<span class="nt">&lt;plugins&gt;</span>
+			<span class="nt">&lt;plugin&gt;</span>
+				<span class="nt">&lt;groupId&gt;</span>org.apache.maven.plugins<span class="nt">&lt;/groupId&gt;</span>
+				<span class="nt">&lt;artifactId&gt;</span>maven-resources-plugin<span class="nt">&lt;/artifactId&gt;</span>
+				<span class="nt">&lt;version&gt;</span>3.1.0<span class="nt">&lt;/version&gt;</span>
+				<span class="nt">&lt;configuration&gt;</span>
+					<span class="nt">&lt;encoding&gt;</span>UTF-8<span class="nt">&lt;/encoding&gt;</span>
+				<span class="nt">&lt;/configuration&gt;</span>
+			<span class="nt">&lt;/plugin&gt;</span>
+			<span class="nt">&lt;plugin&gt;</span>
+				<span class="nt">&lt;artifactId&gt;</span>maven-surefire-plugin<span class="nt">&lt;/artifactId&gt;</span>
+				<span class="nt">&lt;version&gt;</span>2.22.2<span class="nt">&lt;/version&gt;</span>
+				<span class="nt">&lt;configuration&gt;</span>
+					<span class="nt">&lt;suiteXmlFiles&gt;</span>
+						<span class="nt">&lt;suiteXmlFile&gt;</span>src/test/resources/testng.xml<span class="nt">&lt;/suiteXmlFile&gt;</span>
+					<span class="nt">&lt;/suiteXmlFiles&gt;</span>
+				<span class="nt">&lt;/configuration&gt;</span>
+			<span class="nt">&lt;/plugin&gt;</span>
+			<span class="nt">&lt;plugin&gt;</span>
+				<span class="nt">&lt;artifactId&gt;</span>maven-compiler-plugin<span class="nt">&lt;/artifactId&gt;</span>
+				<span class="nt">&lt;version&gt;</span>3.8.1<span class="nt">&lt;/version&gt;</span>
+				<span class="nt">&lt;configuration&gt;</span>
+					<span class="nt">&lt;source&gt;</span>11<span class="nt">&lt;/source&gt;</span> <span class="c">&lt;!-- Replace with Java version --&gt;</span>
+					<span class="nt">&lt;target&gt;</span>11<span class="nt">&lt;/target&gt;</span>
+				<span class="nt">&lt;/configuration&gt;</span>
+			<span class="nt">&lt;/plugin&gt;</span>
+		<span class="nt">&lt;/plugins&gt;</span>
+	<span class="nt">&lt;/build&gt;</span>
+	
+	<span class="c">&lt;!-- profiles --&gt;</span>
+	<span class="nt">&lt;profiles&gt;</span>
+		<span class="nt">&lt;profile&gt;</span>
+			<span class="nt">&lt;id&gt;</span>qa-blaze<span class="nt">&lt;/id&gt;</span>
+			<span class="nt">&lt;properties&gt;</span>
+				<span class="nt">&lt;url&gt;</span>http://demoblaze.com/<span class="nt">&lt;/url&gt;</span> <span class="c">&lt;!-- This value is dynamically replaced in your properties file depending on your selected Profile. --&gt;</span>
+			<span class="nt">&lt;/properties&gt;</span>
+			<span class="nt">&lt;activation&gt;</span>
+				<span class="nt">&lt;activeByDefault&gt;</span>true<span class="nt">&lt;/activeByDefault&gt;</span>
+			<span class="nt">&lt;/activation&gt;</span>
+		<span class="nt">&lt;/profile&gt;</span>
+		<span class="nt">&lt;profile&gt;</span>
+			<span class="nt">&lt;id&gt;</span>prod-blaze<span class="nt">&lt;/id&gt;</span>
+			<span class="nt">&lt;properties&gt;</span>
+				<span class="nt">&lt;url&gt;</span>http://productionurl.com/<span class="nt">&lt;/url&gt;</span> <span class="c">&lt;!-- Replace with website you're testing --&gt;</span>
+			<span class="nt">&lt;/properties&gt;</span>
+		<span class="nt">&lt;/profile&gt;</span>
+	<span class="nt">&lt;/profiles&gt;</span>
+<span class="nt">&lt;/project&gt;</span></code></pre></figure>
+
+<p>Head over to my next post so we can finally run a Selenium WebDriver instance and get things more interesting !</p>
+
+
+</article>
+
+
+
+
+
+<section class="rss">
+  <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+</section>
+
+<section class="share">
+  <span>Share: </span>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+      <a href="//www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fsantiautomation.github.io%2Fframework%2F2020%2F08%2F08%2FFirst-Steps.html"
+        onclick="window.open(this.href, 'linkedin-share', 'width=550,height=255');return false;">
+        <i class="fa fa-linkedin-square fa-lg"></i>
+      </a>
+    
+    
+    
+    
+  
+</section>
+
+	<section class="post-navigation">
+		<span class="prev-post">
+			
+				<a href="/framework/2020/07/27/Automation-Framework-Architecture.html">
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-square fa-stack-2x"></i>
+						<i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
+					</span>
+					<span class="page-number">Test Automation Framework - The main Components</span>
+				</a>
+			
+		</span>
+		<span class="next-post">
+			
+				<a href="/framework/2020/08/14/Driver-Factory.html">
+					<span class="page-number">Driver Factory</span>
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-square fa-stack-2x"></i>
+						<i class="fa fa-angle-double-right fa-stack-1x fa-inverse"></i>
+					</span>
+				</a>
+			
+		</span>
+	</section>
+
+
+
+
+<section class="disqus">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_shortname = 'https-santiautomation-github-io';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+
+
+</div>
+</div>
+
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h3 class="footer-heading">Robust Test Automation with Java</h3>
+
+    <div class="site-navigation">
+
+      <p><strong>Site Map</strong></p>
+      <ul class="pages">
+				
+	
+	<li class="nav-link"><a href="/about/">About</a>
+	
+
+	
+
+	
+
+	
+	<li class="nav-link"><a href="/posts/">Posts</a>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+      </ul>
+    </div>
+
+    <div class="site-contact">
+
+      <p><strong>Contact</strong></p>
+      <ul class="social-media-list">
+        <li>
+          <a href="mailto:santiagoschumacher2@gmail.com">
+            <i class="fa fa-envelope-o"></i>
+            <span class="username">santiagoschumacher2@gmail.com</span>
+          </a>
+        </li>
+
+        
+          
+          <li>
+            <a href="https://github.com/santiautomation" title="Fork me on GitHub">
+              <i class="fa fa-github"></i>
+              <span class="username">sschumacher</span>
+            </a>
+          </li>
+          
+        
+          
+          <li>
+            <a href="https://www.linkedin.com/in/santiago-schumacher/" title="Connect with me on LinkedIn">
+              <i class="fa fa-linkedin"></i>
+              <span class="username">Santiago Schumacher</span>
+            </a>
+          </li>
+          
+        
+
+      </ul>
+    </div>
+
+    <div class="site-signature">
+      <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+      <p class="text">A Blog to share Test Automation best practices oriented towards complex scenarios.
+</p>
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- Scripts -->
+<script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/js/lightbox.min.js"></script>
+<script src="//unpkg.com/popper.js@1"></script>
+<script src="//unpkg.com/tippy.js@5"></script>
+<script src="/js/clipboard.min.js"></script>
+<script src="/js/codeselect.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  // Default syntax highlighting
+  hljs.initHighlightingOnLoad();
+
+  // Header
+  var menuToggle = $('#js-mobile-menu').unbind();
+  $('#js-navigation-menu').removeClass("show");
+  menuToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-navigation-menu').slideToggle(function(){
+      if($('#js-navigation-menu').is(':hidden')) {
+        $('#js-navigation-menu').removeAttr('style');
+      }
+    });
+  });
+
+	// Enable tooltips via Tippy.js
+	if (Array.isArray(window.tooltips)) {
+		window.tooltips.forEach(function(tooltip) {
+			var selector = tooltip[0];
+			var config = tooltip[1];
+			tippy(selector, config);
+		})
+	}
+});
+
+</script>
+
+
+
+
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'G-2GS3X7QMNJ', 'auto');
+  ga('send', 'pageview', {
+    'page': '/framework/2020/08/08/First-Steps.html',
+    'title': 'Getting started building your own Framework'
+  });
+</script>
+
+
+	
+	<form style="border:1px solid #ccc;padding:3px;text-align:center;" action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=RobustTestAutomationWithJava', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true"><p>Enter your email address to receive an email when new content is posted:</p><p><input type="text" style="width:240px;margin-left: auto;margin-right: auto;" name="email"/></p><input type="hidden" value="RobustTestAutomationWithJava" name="uri"/><input type="hidden" name="loc" value="en_US"/><input type="submit" value="Subscribe" /><p>Delivered by <a href="https://feedburner.google.com" target="_blank">FeedBurner</a></p></form>
+	
+  </body>
+
+</html>

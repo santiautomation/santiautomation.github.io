@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2GS3X7QMNJ"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'G-2GS3X7QMNJ');
+	</script>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Retry Failed Tests With TestNG</title>
+  <meta name="description" content="Why Retry Automated Tests with Selenium?">
+  
+  <meta name="author" content="Santiago Lorenzo Schumacher">
+  <meta name="copyright" content="&copy; Santiago Lorenzo Schumacher 2022">
+  
+
+  <!-- External libraries -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/monokai-sublime.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">
+
+  <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+  <link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  
+  <!-- Facebook OGP cards -->
+  <meta property="og:description" content="Why Retry Automated Tests with Selenium?" />
+  <meta property="og:url" content="https://santiautomation.github.io/framework/2020/09/19/Retry-Failed-Tests-With-TestNG.html">
+  <meta property="og:site_name" content="Robust Test Automation with Java" />
+  <meta property="og:title" content="Retry Failed Tests With TestNG" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://santiautomation.github.io/assets/logo.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="632" />
+  <meta property="og:image:height" content="625" />
+  
+
+  
+  <!-- Twitter: card tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Retry Failed Tests With TestNG">
+  <meta name="twitter:description" content="Why Retry Automated Tests with Selenium?">
+  <meta name="twitter:image" content="https://santiautomation.github.io/assets/logo.png">
+  <meta name="twitter:url" content="https://santiautomation.github.io/framework/2020/09/19/Retry-Failed-Tests-With-TestNG.html">
+  
+
+  
+
+  
+  
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Retry Failed Tests With TestNG | Robust Test Automation with Java</title>
+<meta name="generator" content="Jekyll v3.9.2" />
+<meta property="og:title" content="Retry Failed Tests With TestNG" />
+<meta name="author" content="Santiago L. Schumacher" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Why Retry Automated Tests with Selenium?" />
+<meta property="og:description" content="Why Retry Automated Tests with Selenium?" />
+<link rel="canonical" href="https://santiautomation.github.io/framework/2020/09/19/Retry-Failed-Tests-With-TestNG.html" />
+<meta property="og:url" content="https://santiautomation.github.io/framework/2020/09/19/Retry-Failed-Tests-With-TestNG.html" />
+<meta property="og:site_name" content="Robust Test Automation with Java" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-09-19T00:00:52-03:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Retry Failed Tests With TestNG" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Santiago L. Schumacher"},"dateModified":"2020-09-19T00:00:52-03:00","datePublished":"2020-09-19T00:00:52-03:00","description":"Why Retry Automated Tests with Selenium?","headline":"Retry Failed Tests With TestNG","mainEntityOfPage":{"@type":"WebPage","@id":"https://santiautomation.github.io/framework/2020/09/19/Retry-Failed-Tests-With-TestNG.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://santiautomation.github.io/assets/logo.png"},"name":"Santiago L. Schumacher"},"url":"https://santiautomation.github.io/framework/2020/09/19/Retry-Failed-Tests-With-TestNG.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+	
+  <!-- Site styles -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="https://santiautomation.github.io/framework/2020/09/19/Retry-Failed-Tests-With-TestNG.html">
+	<link rel="alternate" type="application/rss+xml" title="Robust Test Automation with Java" href="https://santiautomation.github.io/feed.xml" />
+	
+	<!-- Tooltips -->
+	<script type="text/javascript">
+		window.tooltips = []
+	</script>
+</head>
+
+
+  <body>
+
+    <header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a href="/" class="logo">
+      
+      <img src="/assets/logo.png" alt="Robust Test Automation with Java">
+      
+    </a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+				
+	
+	<li class="nav-link"><a href="/about/">About</a>
+	
+
+	
+
+	
+
+	
+	<li class="nav-link"><a href="/posts/">Posts</a>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+        <div class="post">
+
+<div class="post-header-container " >
+  <div class="scrim ">
+    <header class="post-header">
+      <h1 class="title">Retry Failed Tests With TestNG</h1>
+      <p class="info">by <strong>Santiago L. Schumacher</strong></p>
+    </header>
+  </div>
+</div>
+
+<div class="wrapper">
+
+ <span class="page-divider">
+  <span class="one"></span>
+  <span class="two"></span>
+</span>
+ 
+
+<section class="post-meta">
+  <div class="post-date">September 19, 2020</div>
+  <div class="post-categories">
+  in 
+    
+    <a href="/category/framework">Framework</a>
+    
+  
+  </div>
+</section>
+
+<article class="post-content">
+  <h2>Why Retry Automated Tests with Selenium?</h2>
+
+<p>Retrying failed automated tests is fundamental in a good Automation Framework. It is so because things rarely go exactly as planned, there are numerous errors
+that can happen during test executions which are false negatives, and shouldn’t be shared with the team, because if they review the failures, and find out that 9 out of 10 times
+its false negatives, it will cause distrust within your team with your Automated Tests. 
+<br />
+Some reasons for these false negatives includes: <br /></p>
+<ul>
+	<li>Network hiccups causing disconnection between the Client (Your Framework) and the Browser Driver - or between Selenium's Hub and Nodes if you're using Selenium Grid</li>
+	<li>Temporary application slowness causing timeouts, that cannot be consistently reproduced</li>
+	<li>If you're using dynamic input to the tests, such as obtaning random data from a Database, failures can be related to data issues instead of the Application</li>
+	<li>Selenium or Browser Drivers bugs that would not happen to real users</li>
+</ul>
+
+<p>Luckily for us, TestNG comes bundled with a way to deal with this. It just needs a bit of configuration to get it right.</p>
+
+<h2>The IRetryAnalyzer Interface</h2>
+<p>What we are interested in is an interface called <strong>IRetryAnalyzer</strong>. It is fairly straightforward, contains a single method called <code>retry</code>
+which receives an <strong>ITestResult</strong> parameter. 
+We must implement that method in such a way that if it returns <em>true</em> then the test will re-run, and won’t otherwise.</p>
+
+<h2>Implementing IRetryAnalyzer - The Static (not-recommended) way</h2>
+<p>Let’s look at how it will look like. I created a class called <em>RetryAnalyzer</em>, and placed it in my package <em>src/main/java/tetsrunner</em>:</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">testrunner</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">org.testng.IRetryAnalyzer</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.testng.ITestResult</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.testng.Reporter</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">utils.Constants</span><span class="o">;</span>
+
+<span class="cm">/**
+ * Retry class. If a test were to fail, it will try (1) more time. 
+ * The number can be adjusted by changing the Constants.MAX_RETRY_COUNT value.
+ * 
+ * @author Santiago Schumacher
+ *
+ */</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">RetryAnalyzer</span> <span class="kd">implements</span> <span class="nc">IRetryAnalyzer</span> <span class="o">{</span>
+
+	<span class="kd">private</span> <span class="kt">int</span> <span class="n">retryCount</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="c1">// Variable is intrinsic to a single test method, and should be Thread-safe if our framework is.</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">maxRetryCount</span> <span class="o">=</span> <span class="nc">Constants</span><span class="o">.</span><span class="na">MAX_RETRY_COUNT</span><span class="o">;</span> <span class="c1">// Defined in Constants class but you can write it here directly.</span>
+ 
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">retry</span><span class="o">(</span><span class="nc">ITestResult</span> <span class="n">result</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(++</span><span class="n">retryCount</span> <span class="o">&lt;</span> <span class="n">maxRetryCount</span><span class="o">)</span> <span class="o">{</span>
+            <span class="nc">Reporter</span><span class="o">.</span><span class="na">log</span><span class="o">(</span><span class="s">"Test failed. Retrying. Iteration: "</span> <span class="o">+</span> <span class="n">retryCount</span><span class="o">);</span>
+            <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre></figure>
+
+<p><br /></p>
+
+<p>You might have noticed one thing, we receive the <em>ITestResult</em> parameter, but we aren’t using it ! This is because TestNG will only get this far to analyze the Retry class, if 
+the test failed. So there is no need to check if the execution failed, ie: <code> if (!result.isSuccess()) { ... } </code>.</p>
+
+<p><i>Note: Keep your max retry count to 2-3 iterations, we’re merely giving the test another chance, not trying to <em>force</em> it to pass !</i> <br /></p>
+
+<p>What we have now is enough to use the Retries system. You can test it out ! Create a test that looks something like this:</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="nd">@Test</span><span class="o">(</span><span class="n">retryAnalyzer</span> <span class="o">=</span> <span class="nc">RetryAnalyzer</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">testCase</span><span class="o">()</span> <span class="o">{</span>
+		<span class="nc">Assert</span><span class="o">.</span><span class="na">assertTrue</span><span class="o">(</span><span class="kc">false</span><span class="o">);</span> <span class="c1">// Purposedly failing the Test.</span>
+	<span class="o">}</span></code></pre></figure>
+
+<p><br /></p>
+
+<h2>Implementing IRetryAnalyzer - The Dynamic (recommended!) way</h2>
+
+<p>Of course, the example above is not ideal because it forces the Test Automation Engineer to copy-paste the content between the parenthesis in every single test.
+To enable Retry on your whole suite, let’s start by creating another class in the same package as your RetryAnalyzer, called <em>AnnotationTransformer</em>: <br /></p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">testrunner</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.lang.reflect.Constructor</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.lang.reflect.Method</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">org.testng.IAnnotationTransformer</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.testng.annotations.ITestAnnotation</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">AnnotationTransformer</span> <span class="kd">implements</span> <span class="nc">IAnnotationTransformer</span> <span class="o">{</span>
+
+	<span class="nd">@Override</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">transform</span><span class="o">(</span><span class="nc">ITestAnnotation</span> <span class="n">annotation</span><span class="o">,</span> <span class="nc">Class</span> <span class="n">testClass</span><span class="o">,</span> <span class="nc">Constructor</span> <span class="n">testConstructor</span><span class="o">,</span> <span class="nc">Method</span> <span class="n">testMethod</span><span class="o">)</span> <span class="o">{</span>
+		<span class="n">annotation</span><span class="o">.</span><span class="na">setRetryAnalyzer</span><span class="o">(</span><span class="nc">RetryAnalyzer</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+		<span class="c1">// Like the name implies, this will 'transform' your @Test method, and add the 'retryAnalyzer = RetryAnalyzer.class' inside.</span>
+	<span class="o">}</span>
+	
+<span class="o">}</span></code></pre></figure>
+
+<p>If you’ve been following the guide step-by-step and try to run the suite again, you will notice it no longer is retrying your Tests !! Oh no, is it broken ? <br />
+No worries - it has a very simple fix - your listener (<em>AnnotationTransformer</em>) needs to be added to the testng.xml file, like this:</p>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" &gt;</span>
+  
+<span class="nt">&lt;suite</span> <span class="na">name=</span><span class="s">"Regression"</span> <span class="na">verbose=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;listeners&gt;</span>
+        <span class="nt">&lt;listener</span> <span class="na">class-name=</span><span class="s">"testrunner.AnnotationTransformer"</span><span class="nt">/&gt;</span> 
+        <span class="c">&lt;!-- You can specify as many listeners as you have here, and it will be applied to the entire suite. --&gt;</span>
+  	<span class="nt">&lt;/listeners&gt;</span>
+	<span class="nt">&lt;test</span> <span class="na">name=</span><span class="s">"Regression1"</span> <span class="na">parallel=</span><span class="s">"methods"</span> <span class="na">thread-count=</span><span class="s">"5"</span><span class="nt">&gt;</span>
+		<span class="nt">&lt;parameter</span> <span class="na">name=</span><span class="s">"driverName"</span> <span class="na">value=</span><span class="s">"CHROME"</span> <span class="nt">/&gt;</span> <span class="c">&lt;!-- Sending parameter values through testng.xml --&gt;</span>
+		<span class="nt">&lt;packages&gt;</span>
+			<span class="nt">&lt;package</span> <span class="na">name=</span><span class="s">"tests"</span> <span class="nt">/&gt;</span> <span class="c">&lt;!-- Replace with the name of the package in which your tests reside --&gt;</span>
+		<span class="nt">&lt;/packages&gt;</span>
+	<span class="nt">&lt;/test&gt;</span>
+<span class="nt">&lt;/suite&gt;</span></code></pre></figure>
+
+<p>That’s it for today’s post. 
+Thanks for reading, until the next time,
+Santiago.</p>
+
+</article>
+
+
+
+
+
+<section class="rss">
+  <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+</section>
+
+<section class="share">
+  <span>Share: </span>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+      <a href="//www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fsantiautomation.github.io%2Fframework%2F2020%2F09%2F19%2FRetry-Failed-Tests-With-TestNG.html"
+        onclick="window.open(this.href, 'linkedin-share', 'width=550,height=255');return false;">
+        <i class="fa fa-linkedin-square fa-lg"></i>
+      </a>
+    
+    
+    
+    
+  
+</section>
+
+	<section class="post-navigation">
+		<span class="prev-post">
+			
+				<a href="/miscellaneous/2020/09/13/TestNG-Parallelization.html">
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-square fa-stack-2x"></i>
+						<i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
+					</span>
+					<span class="page-number">Parallelization with TestNG</span>
+				</a>
+			
+		</span>
+		<span class="next-post">
+			
+				<a href="/framework/2020/10/03/Link-Checker-With-Selenium.html">
+					<span class="page-number">Link Checker With Selenium</span>
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-square fa-stack-2x"></i>
+						<i class="fa fa-angle-double-right fa-stack-1x fa-inverse"></i>
+					</span>
+				</a>
+			
+		</span>
+	</section>
+
+
+
+
+<section class="disqus">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_shortname = 'https-santiautomation-github-io';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+
+
+</div>
+</div>
+
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h3 class="footer-heading">Robust Test Automation with Java</h3>
+
+    <div class="site-navigation">
+
+      <p><strong>Site Map</strong></p>
+      <ul class="pages">
+				
+	
+	<li class="nav-link"><a href="/about/">About</a>
+	
+
+	
+
+	
+
+	
+	<li class="nav-link"><a href="/posts/">Posts</a>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+      </ul>
+    </div>
+
+    <div class="site-contact">
+
+      <p><strong>Contact</strong></p>
+      <ul class="social-media-list">
+        <li>
+          <a href="mailto:santiagoschumacher2@gmail.com">
+            <i class="fa fa-envelope-o"></i>
+            <span class="username">santiagoschumacher2@gmail.com</span>
+          </a>
+        </li>
+
+        
+          
+          <li>
+            <a href="https://github.com/santiautomation" title="Fork me on GitHub">
+              <i class="fa fa-github"></i>
+              <span class="username">sschumacher</span>
+            </a>
+          </li>
+          
+        
+          
+          <li>
+            <a href="https://www.linkedin.com/in/santiago-schumacher/" title="Connect with me on LinkedIn">
+              <i class="fa fa-linkedin"></i>
+              <span class="username">Santiago Schumacher</span>
+            </a>
+          </li>
+          
+        
+
+      </ul>
+    </div>
+
+    <div class="site-signature">
+      <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+      <p class="text">A Blog to share Test Automation best practices oriented towards complex scenarios.
+</p>
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- Scripts -->
+<script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/js/lightbox.min.js"></script>
+<script src="//unpkg.com/popper.js@1"></script>
+<script src="//unpkg.com/tippy.js@5"></script>
+<script src="/js/clipboard.min.js"></script>
+<script src="/js/codeselect.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  // Default syntax highlighting
+  hljs.initHighlightingOnLoad();
+
+  // Header
+  var menuToggle = $('#js-mobile-menu').unbind();
+  $('#js-navigation-menu').removeClass("show");
+  menuToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-navigation-menu').slideToggle(function(){
+      if($('#js-navigation-menu').is(':hidden')) {
+        $('#js-navigation-menu').removeAttr('style');
+      }
+    });
+  });
+
+	// Enable tooltips via Tippy.js
+	if (Array.isArray(window.tooltips)) {
+		window.tooltips.forEach(function(tooltip) {
+			var selector = tooltip[0];
+			var config = tooltip[1];
+			tippy(selector, config);
+		})
+	}
+});
+
+</script>
+
+
+
+
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'G-2GS3X7QMNJ', 'auto');
+  ga('send', 'pageview', {
+    'page': '/framework/2020/09/19/Retry-Failed-Tests-With-TestNG.html',
+    'title': 'Retry Failed Tests With TestNG'
+  });
+</script>
+
+
+	
+	<form style="border:1px solid #ccc;padding:3px;text-align:center;" action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=RobustTestAutomationWithJava', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true"><p>Enter your email address to receive an email when new content is posted:</p><p><input type="text" style="width:240px;margin-left: auto;margin-right: auto;" name="email"/></p><input type="hidden" value="RobustTestAutomationWithJava" name="uri"/><input type="hidden" name="loc" value="en_US"/><input type="submit" value="Subscribe" /><p>Delivered by <a href="https://feedburner.google.com" target="_blank">FeedBurner</a></p></form>
+	
+  </body>
+
+</html>

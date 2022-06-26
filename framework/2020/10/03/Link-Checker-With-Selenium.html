@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2GS3X7QMNJ"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'G-2GS3X7QMNJ');
+	</script>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Link Checker With Selenium</title>
+  <meta name="description" content="As a Test Automation Engineer, if you’re solely dedicated to writing test cases in Selenium you will not be performing to your true potential.There are many ...">
+  
+  <meta name="author" content="Santiago Lorenzo Schumacher">
+  <meta name="copyright" content="&copy; Santiago Lorenzo Schumacher 2022">
+  
+
+  <!-- External libraries -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/monokai-sublime.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">
+
+  <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+  <link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  
+  <!-- Facebook OGP cards -->
+  <meta property="og:description" content="As a Test Automation Engineer, if you’re solely dedicated to writing test cases in Selenium you will not be performing to your true potential.There are many ..." />
+  <meta property="og:url" content="https://santiautomation.github.io/framework/2020/10/03/Link-Checker-With-Selenium.html">
+  <meta property="og:site_name" content="Robust Test Automation with Java" />
+  <meta property="og:title" content="Link Checker With Selenium" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://santiautomation.github.io/assets/logo.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="632" />
+  <meta property="og:image:height" content="625" />
+  
+
+  
+  <!-- Twitter: card tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Link Checker With Selenium">
+  <meta name="twitter:description" content="As a Test Automation Engineer, if you’re solely dedicated to writing test cases in Selenium you will not be performing to your true potential.There are many ...">
+  <meta name="twitter:image" content="https://santiautomation.github.io/assets/logo.png">
+  <meta name="twitter:url" content="https://santiautomation.github.io/framework/2020/10/03/Link-Checker-With-Selenium.html">
+  
+
+  
+
+  
+  
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Link Checker With Selenium | Robust Test Automation with Java</title>
+<meta name="generator" content="Jekyll v3.9.2" />
+<meta property="og:title" content="Link Checker With Selenium" />
+<meta name="author" content="Santiago L. Schumacher" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="As a Test Automation Engineer, if you’re solely dedicated to writing test cases in Selenium you will not be performing to your true potential. There are many things you could be doing to:" />
+<meta property="og:description" content="As a Test Automation Engineer, if you’re solely dedicated to writing test cases in Selenium you will not be performing to your true potential. There are many things you could be doing to:" />
+<link rel="canonical" href="https://santiautomation.github.io/framework/2020/10/03/Link-Checker-With-Selenium.html" />
+<meta property="og:url" content="https://santiautomation.github.io/framework/2020/10/03/Link-Checker-With-Selenium.html" />
+<meta property="og:site_name" content="Robust Test Automation with Java" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-10-03T00:00:52-03:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Link Checker With Selenium" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Santiago L. Schumacher"},"dateModified":"2020-10-03T00:00:52-03:00","datePublished":"2020-10-03T00:00:52-03:00","description":"As a Test Automation Engineer, if you’re solely dedicated to writing test cases in Selenium you will not be performing to your true potential. There are many things you could be doing to:","headline":"Link Checker With Selenium","mainEntityOfPage":{"@type":"WebPage","@id":"https://santiautomation.github.io/framework/2020/10/03/Link-Checker-With-Selenium.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://santiautomation.github.io/assets/logo.png"},"name":"Santiago L. Schumacher"},"url":"https://santiautomation.github.io/framework/2020/10/03/Link-Checker-With-Selenium.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+	
+  <!-- Site styles -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="https://santiautomation.github.io/framework/2020/10/03/Link-Checker-With-Selenium.html">
+	<link rel="alternate" type="application/rss+xml" title="Robust Test Automation with Java" href="https://santiautomation.github.io/feed.xml" />
+	
+	<!-- Tooltips -->
+	<script type="text/javascript">
+		window.tooltips = []
+	</script>
+</head>
+
+
+  <body>
+
+    <header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a href="/" class="logo">
+      
+      <img src="/assets/logo.png" alt="Robust Test Automation with Java">
+      
+    </a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+				
+	
+	<li class="nav-link"><a href="/about/">About</a>
+	
+
+	
+
+	
+
+	
+	<li class="nav-link"><a href="/posts/">Posts</a>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+        <div class="post">
+
+<div class="post-header-container " >
+  <div class="scrim ">
+    <header class="post-header">
+      <h1 class="title">Link Checker With Selenium</h1>
+      <p class="info">by <strong>Santiago L. Schumacher</strong></p>
+    </header>
+  </div>
+</div>
+
+<div class="wrapper">
+
+ <span class="page-divider">
+  <span class="one"></span>
+  <span class="two"></span>
+</span>
+ 
+
+<section class="post-meta">
+  <div class="post-date">October 3, 2020</div>
+  <div class="post-categories">
+  in 
+    
+    <a href="/category/framework">Framework</a>
+    
+  
+  </div>
+</section>
+
+<article class="post-content">
+  <p>As a Test Automation Engineer, if you’re solely dedicated to writing test cases in Selenium you will not be performing to your true potential.
+There are many things you could be doing to: <br /></p>
+
+<ul>
+  <li>Help the team achieve excellence in your applications</li>
+  <li>Reduce testing time as much as possible</li>
+  <li>Help developers gain <em>confidence</em> in their changes knowing in a short time if their commits produced unintentional/unexpected alterations</li>
+</ul>
+
+<p>One of those things will be explained and shared with working code on this Post… <em>Validating all the links on your Website</em>.  There are a number of other helpful
+Utils we could add to our Test Framework, and I will be discussing them in following posts, so make sure to <strong>Subscribe</strong> scrolling all the way down to the bottom of the page,
+so you don’t miss them!.</p>
+
+<p>The advantage of using your solution, instead of the many available online, such as the recommended <a href="https://validator.w3.org/checklink">W3C Link Checker</a>,
+is that you will be having everything in one place, which makes for a single entry point to run your tests, analyze links and other tools you can add, and have a single central
+Report.<br />
+It will also allow you to navigate to and load a link in your browser with Selenium, which is more than what normal Link Checkers you find online will do (performing only HTTP calls).  <br />
+<br /></p>
+
+<h2>What Are Broken Links</h2>
+
+<p>Broken links happen when your Web Browser can’t find the URL you’re looking for. In this context, we will one be looking at links <em>within</em> a valid website.<br />
+It can happen because:</p>
+<ul>
+  <li>A webpage was moved without updating its references</li>
+  <li>The URL structure of a website was changed</li>
+  <li>Missing/misconfigured properties files in the deployment</li>
+</ul>
+
+<p>And attempting to navigate to them will send you to ugly 404 sites, and reduce the Website quality in <a href="https://searchengineland.com/guide/what-is-seo">Search Engine Optimization</a>, which is
+why it’s important to discover broken links <em>before</em> they’re deployed in Production.<br /><br /></p>
+
+<h2>Implementing a Simple Link Checker in Your Test Framework</h2>
+<p>First, let’s be clear on a few things we will need:</p>
+<ul>
+  <li>We want to be able to run it as part of our Automated tests, and we will use our Framework for that</li>
+  <li>The report will follow the format: <i>URL that has the broken link -&gt; Broken Link</i></li>
+  <li>We want to go through all the possible URLs within the same Host, for example, if your website contains links to other sites, we shouldn’t check their links</li>
+  <li>Check the links by doing a HEAD HTTP request instead of a GET to improve performance</li>
+  <li>Make sure we only check an URL once, so we need a List of previously checked URLs</li>
+</ul>
+
+<p>I’ve created a package <em>linkchecker</em> inside the <em>utils</em> package.<br />
+Let’s take a look at a class that will be doing most of the heavy work. Remember you can access the entire code at my <a href="https://github.com/santiautomation/santi-automation-framework">Github</a></p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">utils.linkchecker</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.net.MalformedURLException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.net.URL</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.ArrayList</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.HashSet</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.List</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Set</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">javax.swing.text.html.HTML</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">org.apache.commons.validator.routines.UrlValidator</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.openqa.selenium.By</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.openqa.selenium.WebDriver</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.openqa.selenium.WebElement</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">com.google.common.collect.ArrayListMultimap</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.google.common.collect.Multimap</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">seleniumutils.Utilities</span><span class="o">;</span>
+
+<span class="cm">/**
+ * Link Validator class, with navigation and recursion to go through all the URLs available from the
+ * starting point passed in the constructor. 
+ * If the failedLinks variable is empty after finishing then you should pass your test, otherwise print/report all the broken links.
+ * 
+ * 
+ * @author Santiago Schumacher
+ *
+ */</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">LinkChecker</span> <span class="o">{</span>
+
+	<span class="kd">private</span> <span class="kd">final</span> <span class="nc">WebDriver</span> <span class="n">driver</span><span class="o">;</span>
+	<span class="kd">private</span> <span class="nc">List</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">linksPass</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ArrayList</span><span class="o">&lt;&gt;();</span>
+	<span class="c1">// Multimap is neat class from Google Commons that will allow us to have duplicated keys, which we will need to store the failed links</span>
+	<span class="c1">// The Keys in our case is the URL which has broken link/s, and the Value is the link that's broken.</span>
+	<span class="kd">private</span> <span class="nc">Multimap</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span> <span class="nc">String</span><span class="o">&gt;</span> <span class="n">linksFail</span> <span class="o">=</span> <span class="nc">ArrayListMultimap</span><span class="o">.</span><span class="na">create</span><span class="o">();</span>
+	<span class="kd">private</span> <span class="nc">Set</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">scannedLinks</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">HashSet</span><span class="o">&lt;&gt;();</span> <span class="c1">// Set to avoid duplicates.</span>
+	<span class="kd">private</span> <span class="nc">String</span> <span class="n">url</span><span class="o">;</span>
+	<span class="kd">private</span> <span class="nc">UrlValidator</span> <span class="n">urlValidator</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">UrlValidator</span><span class="o">();</span> <span class="c1">// From Apache Commons. More info at https://commons.apache.org/proper/commons-validator/apidocs/org/apache/commons/validator/routines/UrlValidator.html</span>
+	<span class="kd">private</span> <span class="nc">String</span> <span class="n">host</span><span class="o">;</span>
+	
+	<span class="cm">/**
+	 * 
+	 * @param driver
+	 * @param url - Starting point of the Link Checker
+	 * @throws MalformedURLException
+	 */</span>
+	<span class="kd">public</span> <span class="nf">LinkChecker</span><span class="o">(</span><span class="kd">final</span> <span class="nc">WebDriver</span> <span class="n">driver</span><span class="o">,</span> <span class="nc">String</span> <span class="n">url</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">MalformedURLException</span> <span class="o">{</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">driver</span> <span class="o">=</span> <span class="n">driver</span><span class="o">;</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">url</span> <span class="o">=</span> <span class="n">url</span><span class="o">;</span> <span class="c1">// Our starting point, the website to be checked.</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">host</span> <span class="o">=</span> <span class="n">extractHost</span><span class="o">(</span><span class="n">url</span><span class="o">);</span>
+	<span class="o">}</span>
+	
+	<span class="cm">/**
+	 * Returns the host (String between http/https/www and .com/.net/io etc)
+	 * Will throw an Exception if the URL is not valid.43333
+	 * @param url
+	 * @return
+	 * @throws MalformedURLException
+	 */</span>
+	<span class="kd">private</span> <span class="nc">String</span> <span class="nf">extractHost</span><span class="o">(</span><span class="nc">String</span> <span class="n">url</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">MalformedURLException</span> <span class="o">{</span>
+		<span class="no">URL</span> <span class="n">u</span> <span class="o">=</span> <span class="k">new</span> <span class="no">URL</span><span class="o">(</span><span class="n">url</span><span class="o">);</span>
+		<span class="k">return</span> <span class="n">u</span><span class="o">.</span><span class="na">getHost</span><span class="o">();</span>
+	<span class="o">}</span>
+
+	<span class="c1">// Getters and setters of our variables omitted here for brevity</span>
+	
+	<span class="cm">/**
+	 * Entry point of the Link Checker.
+	 * 
+	 * @throws MalformedURLException
+	 */</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">linkCheckerWithNavigation</span><span class="o">()</span> <span class="kd">throws</span> <span class="nc">MalformedURLException</span> <span class="o">{</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">getScannedLinks</span><span class="o">().</span><span class="na">add</span><span class="o">(</span><span class="n">driver</span><span class="o">.</span><span class="na">getCurrentUrl</span><span class="o">());</span> <span class="c1">// Start by adding the URL where we are at now to the scanned links.</span>
+		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Current URL checking: "</span> <span class="o">+</span> <span class="n">driver</span><span class="o">.</span><span class="na">getCurrentUrl</span><span class="o">());</span>
+		<span class="nc">List</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">allHrefAtr</span> <span class="o">=</span> <span class="n">getLinks</span><span class="o">();</span> <span class="c1">// Get all the links from the current URL and store them</span>
+		
+		<span class="k">for</span> <span class="o">(</span><span class="nc">String</span> <span class="nl">urlToScan:</span> <span class="n">allHrefAtr</span><span class="o">)</span> <span class="o">{</span>
+	
+			<span class="kt">boolean</span> <span class="n">status</span> <span class="o">=</span> <span class="nc">Utilities</span><span class="o">.</span><span class="na">getUrlResponse</span><span class="o">(</span><span class="n">urlToScan</span><span class="o">);</span> <span class="c1">// Actual check if the given URL String can be accessed.</span>
+			
+			<span class="k">if</span> <span class="o">(!</span><span class="n">status</span><span class="o">)</span> <span class="o">{</span>
+				<span class="n">getLinksFail</span><span class="o">().</span><span class="na">put</span><span class="o">(</span><span class="n">driver</span><span class="o">.</span><span class="na">getCurrentUrl</span><span class="o">(),</span> <span class="n">urlToScan</span><span class="o">);</span> <span class="c1">// Store data in format fromUrl - failedLink</span>
+			<span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+				<span class="n">getLinksPass</span><span class="o">().</span><span class="na">add</span><span class="o">(</span><span class="n">urlToScan</span><span class="o">);</span>
+			<span class="o">}</span>
+		<span class="o">}</span>
+
+		<span class="k">for</span> <span class="o">(</span><span class="nc">String</span> <span class="n">newUrlToScan</span> <span class="o">:</span> <span class="n">getLinksPass</span><span class="o">())</span> <span class="o">{</span> <span class="c1">// For every valid link inside currently scanned URL</span>
+			<span class="c1">// Checking if the URL hasn't already been processed, and if it's from the same Host.</span>
+			<span class="k">if</span> <span class="o">(!</span><span class="n">getScannedLinks</span><span class="o">().</span><span class="na">contains</span><span class="o">(</span><span class="n">newUrlToScan</span><span class="o">)</span> <span class="o">&amp;&amp;</span> <span class="n">newUrlToScan</span><span class="o">.</span><span class="na">contains</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">getHost</span><span class="o">()))</span> <span class="o">{</span> 
+				<span class="n">driver</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">newUrlToScan</span><span class="o">);</span> <span class="c1">// Navigate to the next link before starting the process again.</span>
+				<span class="n">linkCheckerWithNavigation</span><span class="o">();</span> <span class="c1">// Recursion. Start validating links again from a different URL of the same host.</span>
+			<span class="o">}</span>
+		<span class="o">}</span>
+	<span class="o">}</span>
+
+	<span class="cm">/**
+	 * Returns a List of links inside current website. 
+	 */</span>
+	<span class="kd">private</span> <span class="nc">List</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="nf">getLinks</span><span class="o">()</span> <span class="o">{</span>
+		<span class="nc">List</span><span class="o">&lt;</span><span class="nc">WebElement</span><span class="o">&gt;</span> <span class="n">allLinks</span> <span class="o">=</span> <span class="n">driver</span><span class="o">.</span><span class="na">findElements</span><span class="o">(</span><span class="nc">By</span><span class="o">.</span><span class="na">tagName</span><span class="o">(</span><span class="no">HTML</span><span class="o">.</span><span class="na">Tag</span><span class="o">.</span><span class="na">A</span><span class="o">.</span><span class="na">toString</span><span class="o">()));</span>
+		<span class="nc">List</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">stringLinks</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ArrayList</span><span class="o">&lt;&gt;();</span>
+		
+		<span class="k">for</span> <span class="o">(</span><span class="nc">WebElement</span> <span class="n">link</span> <span class="o">:</span> <span class="n">allLinks</span><span class="o">)</span> <span class="o">{</span>
+			
+			<span class="nc">String</span> <span class="n">theLink</span> <span class="o">=</span> <span class="n">link</span><span class="o">.</span><span class="na">getAttribute</span><span class="o">(</span><span class="no">HTML</span><span class="o">.</span><span class="na">Attribute</span><span class="o">.</span><span class="na">HREF</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
+			<span class="c1">// Skip repeated URL, URLs already checked, or if its equals to the current URL.</span>
+			<span class="k">if</span> <span class="o">(</span><span class="n">isLinkValid</span><span class="o">(</span><span class="n">theLink</span><span class="o">)</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="k">this</span><span class="o">.</span><span class="na">getLinksPass</span><span class="o">().</span><span class="na">contains</span><span class="o">(</span><span class="n">theLink</span><span class="o">))</span> <span class="o">{</span>
+				<span class="n">stringLinks</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">theLink</span><span class="o">);</span>
+			<span class="o">}</span>
+		<span class="o">}</span>
+				
+		<span class="k">return</span> <span class="n">stringLinks</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="kd">private</span> <span class="kt">boolean</span> <span class="nf">isLinkValid</span><span class="o">(</span><span class="nc">String</span> <span class="n">theLink</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="n">urlValidator</span><span class="o">.</span><span class="na">isValid</span><span class="o">(</span><span class="n">theLink</span><span class="o">)</span> <span class="o">&amp;&amp;</span> 
+				<span class="o">!</span><span class="n">scannedLinks</span><span class="o">.</span><span class="na">contains</span><span class="o">(</span><span class="n">theLink</span><span class="o">)</span>	<span class="o">&amp;&amp;</span> <span class="c1">// Make sure URL wasn't already scanned</span>
+				<span class="o">!</span><span class="n">driver</span><span class="o">.</span><span class="na">getCurrentUrl</span><span class="o">().</span><span class="na">equalsIgnoreCase</span><span class="o">(</span><span class="n">theLink</span><span class="o">)</span> <span class="o">&amp;&amp;</span> <span class="c1">//This and below links remains on the same URL so we don't navigate to them</span>
+				<span class="o">!</span><span class="n">theLink</span><span class="o">.</span><span class="na">contains</span><span class="o">(</span><span class="s">"collapse"</span><span class="o">)</span> <span class="o">&amp;&amp;</span> 
+				<span class="o">!</span><span class="n">theLink</span><span class="o">.</span><span class="na">contains</span><span class="o">(</span><span class="s">"#"</span><span class="o">);</span>
+	<span class="o">}</span>
+
+	
+<span class="o">}</span></code></pre></figure>
+
+<p><br />
+From the above we have almost everything we need in place. The only thing missing is the implementation of <code>Utilities.getUrlResponse(urlToScan)</code>. <br /></p>
+
+<p>Like we mentioned above, it will perform better if the use HEAD HTTP calls to the link instead of calling GET or attempting to navigate, so a nice implementation
+of that method looks something like this: <br /></p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java">	<span class="cm">/**
+	 * Given an URL (In String representation) returns true if it's accessible (response codes 200-300), false otherwise.
+	 * 
+	 * @param url
+	 * @return True is the link is valid and returns a 200-300 response code, false otherwise.
+	 * @throws MalformedURLException
+	 */</span>
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">getUrlResponse</span><span class="o">(</span><span class="nc">String</span> <span class="n">url</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">MalformedURLException</span> <span class="o">{</span>
+		<span class="no">URL</span> <span class="n">myURL</span> <span class="o">=</span> <span class="k">new</span> <span class="no">URL</span><span class="o">(</span><span class="n">url</span><span class="o">);</span>
+
+		<span class="nc">HttpURLConnection</span> <span class="n">conn</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+		<span class="k">try</span> <span class="o">{</span>
+			<span class="n">conn</span> <span class="o">=</span> <span class="o">(</span><span class="nc">HttpURLConnection</span><span class="o">)</span> <span class="n">myURL</span><span class="o">.</span><span class="na">openConnection</span><span class="o">();</span>
+			<span class="n">conn</span><span class="o">.</span><span class="na">setRequestMethod</span><span class="o">(</span><span class="nc">HttpMethod</span><span class="o">.</span><span class="na">HEAD</span><span class="o">.</span><span class="na">name</span><span class="o">());</span>
+
+			<span class="k">return</span> <span class="n">conn</span><span class="o">.</span><span class="na">getResponseCode</span><span class="o">()</span> <span class="o">&lt;</span> <span class="mi">400</span><span class="o">;</span>
+
+		<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+			<span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+		<span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
+			<span class="k">if</span> <span class="o">(</span><span class="kc">null</span> <span class="o">!=</span> <span class="n">conn</span><span class="o">)</span> <span class="o">{</span>
+				<span class="n">conn</span><span class="o">.</span><span class="na">disconnect</span><span class="o">();</span> <span class="c1">// Always remember to disconnect, we don't want leaked resources !</span>
+			<span class="o">}</span>
+		<span class="o">}</span>
+	<span class="o">}</span></code></pre></figure>
+
+<p><br /></p>
+
+<p>With all that in place, we are ready to start using them in a Test, you could instantiate the <code>LinkChecker</code> class directly in your test, but it’s 
+probably a better decision to add that in the <code>BasePage</code> instead, where it’s available for others Test Automation Engineers if you’re working with a team.</p>
+
+<p>Instantiation is quite simple:</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java">	
+	<span class="kd">public</span> <span class="nc">Multimap</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span> <span class="nc">String</span><span class="o">&gt;</span> <span class="nf">checkLinks</span><span class="o">()</span> <span class="kd">throws</span> <span class="nc">MalformedURLException</span> <span class="o">{</span>
+		<span class="nc">LinkChecker</span> <span class="n">lc</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">LinkChecker</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">getDriver</span><span class="o">(),</span> <span class="n">driver</span><span class="o">.</span><span class="na">getCurrentUrl</span><span class="o">());</span>
+		<span class="n">lc</span><span class="o">.</span><span class="na">linkCheckerWithNavigation</span><span class="o">();</span>
+		
+		<span class="k">return</span> <span class="n">lc</span><span class="o">.</span><span class="na">getLinksFail</span><span class="o">();</span>
+	<span class="o">}</span></code></pre></figure>
+
+<p>And now you have a working link checker available as part of your regression tests ! Keep in mind this is one of the simplest versions available, if you’re
+feeling adventurous I have a couple improvements in my head that you can implement:</p>
+<ul>
+  <li>Add a DEPTH variable so you can alter the max level of recursion</li>
+  <li>Include other HTML tags that can be processed with HTTP requests, for example img</li>
+</ul>
+
+<p>That’s it for today’s post.<br /> 
+Thanks for reading, and happy testing,
+Santiago.</p>
+
+</article>
+
+
+
+
+
+<section class="rss">
+  <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+</section>
+
+<section class="share">
+  <span>Share: </span>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+      <a href="//www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fsantiautomation.github.io%2Fframework%2F2020%2F10%2F03%2FLink-Checker-With-Selenium.html"
+        onclick="window.open(this.href, 'linkedin-share', 'width=550,height=255');return false;">
+        <i class="fa fa-linkedin-square fa-lg"></i>
+      </a>
+    
+    
+    
+    
+  
+</section>
+
+	<section class="post-navigation">
+		<span class="prev-post">
+			
+				<a href="/framework/2020/09/19/Retry-Failed-Tests-With-TestNG.html">
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-square fa-stack-2x"></i>
+						<i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
+					</span>
+					<span class="page-number">Retry Failed Tests With TestNG</span>
+				</a>
+			
+		</span>
+		<span class="next-post">
+			
+				<a href="/others/2022/06/19/Blog-Updates!.html">
+					<span class="page-number">Blog Updates and News!</span>
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-square fa-stack-2x"></i>
+						<i class="fa fa-angle-double-right fa-stack-1x fa-inverse"></i>
+					</span>
+				</a>
+			
+		</span>
+	</section>
+
+
+
+
+<section class="disqus">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_shortname = 'https-santiautomation-github-io';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+
+
+</div>
+</div>
+
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h3 class="footer-heading">Robust Test Automation with Java</h3>
+
+    <div class="site-navigation">
+
+      <p><strong>Site Map</strong></p>
+      <ul class="pages">
+				
+	
+	<li class="nav-link"><a href="/about/">About</a>
+	
+
+	
+
+	
+
+	
+	<li class="nav-link"><a href="/posts/">Posts</a>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+      </ul>
+    </div>
+
+    <div class="site-contact">
+
+      <p><strong>Contact</strong></p>
+      <ul class="social-media-list">
+        <li>
+          <a href="mailto:santiagoschumacher2@gmail.com">
+            <i class="fa fa-envelope-o"></i>
+            <span class="username">santiagoschumacher2@gmail.com</span>
+          </a>
+        </li>
+
+        
+          
+          <li>
+            <a href="https://github.com/santiautomation" title="Fork me on GitHub">
+              <i class="fa fa-github"></i>
+              <span class="username">sschumacher</span>
+            </a>
+          </li>
+          
+        
+          
+          <li>
+            <a href="https://www.linkedin.com/in/santiago-schumacher/" title="Connect with me on LinkedIn">
+              <i class="fa fa-linkedin"></i>
+              <span class="username">Santiago Schumacher</span>
+            </a>
+          </li>
+          
+        
+
+      </ul>
+    </div>
+
+    <div class="site-signature">
+      <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+      <p class="text">A Blog to share Test Automation best practices oriented towards complex scenarios.
+</p>
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- Scripts -->
+<script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/js/lightbox.min.js"></script>
+<script src="//unpkg.com/popper.js@1"></script>
+<script src="//unpkg.com/tippy.js@5"></script>
+<script src="/js/clipboard.min.js"></script>
+<script src="/js/codeselect.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  // Default syntax highlighting
+  hljs.initHighlightingOnLoad();
+
+  // Header
+  var menuToggle = $('#js-mobile-menu').unbind();
+  $('#js-navigation-menu').removeClass("show");
+  menuToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-navigation-menu').slideToggle(function(){
+      if($('#js-navigation-menu').is(':hidden')) {
+        $('#js-navigation-menu').removeAttr('style');
+      }
+    });
+  });
+
+	// Enable tooltips via Tippy.js
+	if (Array.isArray(window.tooltips)) {
+		window.tooltips.forEach(function(tooltip) {
+			var selector = tooltip[0];
+			var config = tooltip[1];
+			tippy(selector, config);
+		})
+	}
+});
+
+</script>
+
+
+
+
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'G-2GS3X7QMNJ', 'auto');
+  ga('send', 'pageview', {
+    'page': '/framework/2020/10/03/Link-Checker-With-Selenium.html',
+    'title': 'Link Checker With Selenium'
+  });
+</script>
+
+
+	
+	<form style="border:1px solid #ccc;padding:3px;text-align:center;" action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=RobustTestAutomationWithJava', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true"><p>Enter your email address to receive an email when new content is posted:</p><p><input type="text" style="width:240px;margin-left: auto;margin-right: auto;" name="email"/></p><input type="hidden" value="RobustTestAutomationWithJava" name="uri"/><input type="hidden" name="loc" value="en_US"/><input type="submit" value="Subscribe" /><p>Delivered by <a href="https://feedburner.google.com" target="_blank">FeedBurner</a></p></form>
+	
+  </body>
+
+</html>

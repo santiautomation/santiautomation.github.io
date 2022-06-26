@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Robust Test Automation with Java</title>
+    <description>A Blog to share Test Automation best practices oriented towards complex scenarios.
+</description>
+    <link>https://santiautomation.github.io/</link>
+    <atom:link href="https://santiautomation.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sun, 26 Jun 2022 16:57:49 -0300</pubDate>
+    <lastBuildDate>Sun, 26 Jun 2022 16:57:49 -0300</lastBuildDate>
+    <generator>Jekyll v3.9.2</generator>
+    
+      <item>
+        <title>How to Integrate ExtentReports to a Java Test Automation Framework.</title>
+        <description>&lt;h1&gt;Building Beautiful Reports with ExtentReports&lt;/h1&gt; &lt;p&gt;An immensely important part of creating automated tests, which is also often overlooked, is the ability to create good reports following a test execution. &lt;br...</description>
+        <pubDate>Mon, 20 Jun 2022 00:00:52 -0300</pubDate>
+        <link>https://santiautomation.github.io/framework/2022/06/20/Adding-ExtentReports-to-the-Framework.html</link>
+        <guid isPermaLink="true">https://santiautomation.github.io/framework/2022/06/20/Adding-ExtentReports-to-the-Framework.html</guid>
+        
+        
+        <category>framework</category>
+        
+      </item>
+    
+      <item>
+        <title>Blog Updates and News!</title>
+        <description>&lt;p&gt;Hey, everyone !&lt;/p&gt; &lt;p&gt;After a long hiatus, I’m finally back and resuming posting on this blog.&lt;/p&gt; &lt;p&gt;Despite my hiatus, there have been several updates and improvements to my public &lt;a...</description>
+        <pubDate>Sun, 19 Jun 2022 00:00:52 -0300</pubDate>
+        <link>https://santiautomation.github.io/others/2022/06/19/Blog-Updates!.html</link>
+        <guid isPermaLink="true">https://santiautomation.github.io/others/2022/06/19/Blog-Updates!.html</guid>
+        
+        
+        <category>others</category>
+        
+      </item>
+    
+      <item>
+        <title>Link Checker With Selenium</title>
+        <description>&lt;p&gt;As a Test Automation Engineer, if you’re solely dedicated to writing test cases in Selenium you will not be performing to your true potential. There are many things you could...</description>
+        <pubDate>Sat, 03 Oct 2020 00:00:52 -0300</pubDate>
+        <link>https://santiautomation.github.io/framework/2020/10/03/Link-Checker-With-Selenium.html</link>
+        <guid isPermaLink="true">https://santiautomation.github.io/framework/2020/10/03/Link-Checker-With-Selenium.html</guid>
+        
+        
+        <category>framework</category>
+        
+      </item>
+    
+      <item>
+        <title>Retry Failed Tests With TestNG</title>
+        <description>&lt;h2&gt;Why Retry Automated Tests with Selenium?&lt;/h2&gt; &lt;p&gt;Retrying failed automated tests is fundamental in a good Automation Framework. It is so because things rarely go exactly as planned, there are numerous...</description>
+        <pubDate>Sat, 19 Sep 2020 00:00:52 -0300</pubDate>
+        <link>https://santiautomation.github.io/framework/2020/09/19/Retry-Failed-Tests-With-TestNG.html</link>
+        <guid isPermaLink="true">https://santiautomation.github.io/framework/2020/09/19/Retry-Failed-Tests-With-TestNG.html</guid>
+        
+        
+        <category>framework</category>
+        
+      </item>
+    
+      <item>
+        <title>Parallelization with TestNG</title>
+        <description>&lt;h2&gt;Why Parallelization?&lt;/h2&gt; &lt;p&gt;Parallelization is the notion of executing more than one test at the same time, exponentially decreasing the amount of time needed to run your test suite/s. This can...</description>
+        <pubDate>Sun, 13 Sep 2020 00:00:52 -0300</pubDate>
+        <link>https://santiautomation.github.io/miscellaneous/2020/09/13/TestNG-Parallelization.html</link>
+        <guid isPermaLink="true">https://santiautomation.github.io/miscellaneous/2020/09/13/TestNG-Parallelization.html</guid>
+        
+        
+        <category>miscellaneous</category>
+        
+      </item>
+    
+      <item>
+        <title>Executing Your First Test</title>
+        <description>&lt;p&gt;In our &lt;a href=&quot;/framework/2020/08/14/Driver-Factory.html&quot;&gt;previous post&lt;/a&gt;, we staged a way to create Drivers, but we haven’t used it yet. This time we will create some sample tests, a &lt;code&gt;BaseTest.java&lt;/code&gt; class, and...</description>
+        <pubDate>Sat, 22 Aug 2020 16:25:52 -0300</pubDate>
+        <link>https://santiautomation.github.io/framework/2020/08/22/Executing-Your-First-Test.html</link>
+        <guid isPermaLink="true">https://santiautomation.github.io/framework/2020/08/22/Executing-Your-First-Test.html</guid>
+        
+        
+        <category>framework</category>
+        
+      </item>
+    
+      <item>
+        <title>Effective Locators in Selenium</title>
+        <description>&lt;h2&gt;Successful Locator Strategies for WebElements&lt;/h2&gt; &lt;p&gt;Let’s discuss now the best strategies, patterns, tips, etc to come up with good, robust Locators that are the least likely to break down when...</description>
+        <pubDate>Sat, 15 Aug 2020 00:00:52 -0300</pubDate>
+        <link>https://santiautomation.github.io/miscellaneous/2020/08/15/Selenium-Locator-Strategies.html</link>
+        <guid isPermaLink="true">https://santiautomation.github.io/miscellaneous/2020/08/15/Selenium-Locator-Strategies.html</guid>
+        
+        
+        <category>miscellaneous</category>
+        
+      </item>
+    
+      <item>
+        <title>Driver Factory</title>
+        <description>&lt;h1&gt;Factory Pattern for Selenium WebDriver&lt;/h1&gt; &lt;p&gt;On my previous posts we initialized a new maven Project, and added the dependencies we will need for our Framework. Now we can get started...</description>
+        <pubDate>Fri, 14 Aug 2020 16:25:52 -0300</pubDate>
+        <link>https://santiautomation.github.io/framework/2020/08/14/Driver-Factory.html</link>
+        <guid isPermaLink="true">https://santiautomation.github.io/framework/2020/08/14/Driver-Factory.html</guid>
+        
+        
+        <category>framework</category>
+        
+      </item>
+    
+      <item>
+        <title>Getting started building your own Framework</title>
+        <description>&lt;h1&gt;Your first step towards a robust Test Automation Framework&lt;/h1&gt; &lt;p&gt;If you’ve been reading my first post on the framework category, you know we gave a rough overview of some of...</description>
+        <pubDate>Sat, 08 Aug 2020 16:25:52 -0300</pubDate>
+        <link>https://santiautomation.github.io/framework/2020/08/08/First-Steps.html</link>
+        <guid isPermaLink="true">https://santiautomation.github.io/framework/2020/08/08/First-Steps.html</guid>
+        
+        
+        <category>framework</category>
+        
+      </item>
+    
+      <item>
+        <title>Test Automation Framework - The main Components</title>
+        <description>&lt;h1&gt;Setting the right building blocks for your Framework&lt;/h1&gt; &lt;p&gt;Hello everybody ! In this first post about building a good, robust test automation framework, we’ll start talking about some of the...</description>
+        <pubDate>Mon, 27 Jul 2020 16:25:52 -0300</pubDate>
+        <link>https://santiautomation.github.io/framework/2020/07/27/Automation-Framework-Architecture.html</link>
+        <guid isPermaLink="true">https://santiautomation.github.io/framework/2020/07/27/Automation-Framework-Architecture.html</guid>
+        
+        
+        <category>framework</category>
+        
+      </item>
+    
+  </channel>
+</rss>

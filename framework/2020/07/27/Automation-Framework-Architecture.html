@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2GS3X7QMNJ"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'G-2GS3X7QMNJ');
+	</script>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Test Automation Framework - The main Components</title>
+  <meta name="description" content="Setting the right building blocks for your Framework">
+  
+  <meta name="author" content="Santiago Lorenzo Schumacher">
+  <meta name="copyright" content="&copy; Santiago Lorenzo Schumacher 2022">
+  
+
+  <!-- External libraries -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/monokai-sublime.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">
+
+  <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+  <link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  
+  <!-- Facebook OGP cards -->
+  <meta property="og:description" content="Setting the right building blocks for your Framework" />
+  <meta property="og:url" content="https://santiautomation.github.io/framework/2020/07/27/Automation-Framework-Architecture.html">
+  <meta property="og:site_name" content="Robust Test Automation with Java" />
+  <meta property="og:title" content="Test Automation Framework - The main Components" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://santiautomation.github.io/assets/logo.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="632" />
+  <meta property="og:image:height" content="625" />
+  
+
+  
+  <!-- Twitter: card tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Test Automation Framework - The main Components">
+  <meta name="twitter:description" content="Setting the right building blocks for your Framework">
+  <meta name="twitter:image" content="https://santiautomation.github.io/assets/logo.png">
+  <meta name="twitter:url" content="https://santiautomation.github.io/framework/2020/07/27/Automation-Framework-Architecture.html">
+  
+
+  
+
+  
+  
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Test Automation Framework - The main Components | Robust Test Automation with Java</title>
+<meta name="generator" content="Jekyll v3.9.2" />
+<meta property="og:title" content="Test Automation Framework - The main Components" />
+<meta name="author" content="Santiago L. Schumacher" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Setting the right building blocks for your Framework" />
+<meta property="og:description" content="Setting the right building blocks for your Framework" />
+<link rel="canonical" href="https://santiautomation.github.io/framework/2020/07/27/Automation-Framework-Architecture.html" />
+<meta property="og:url" content="https://santiautomation.github.io/framework/2020/07/27/Automation-Framework-Architecture.html" />
+<meta property="og:site_name" content="Robust Test Automation with Java" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-07-27T16:25:52-03:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Test Automation Framework - The main Components" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Santiago L. Schumacher"},"dateModified":"2020-07-27T16:25:52-03:00","datePublished":"2020-07-27T16:25:52-03:00","description":"Setting the right building blocks for your Framework","headline":"Test Automation Framework - The main Components","mainEntityOfPage":{"@type":"WebPage","@id":"https://santiautomation.github.io/framework/2020/07/27/Automation-Framework-Architecture.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://santiautomation.github.io/assets/logo.png"},"name":"Santiago L. Schumacher"},"url":"https://santiautomation.github.io/framework/2020/07/27/Automation-Framework-Architecture.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+	
+  <!-- Site styles -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="https://santiautomation.github.io/framework/2020/07/27/Automation-Framework-Architecture.html">
+	<link rel="alternate" type="application/rss+xml" title="Robust Test Automation with Java" href="https://santiautomation.github.io/feed.xml" />
+	
+	<!-- Tooltips -->
+	<script type="text/javascript">
+		window.tooltips = []
+	</script>
+</head>
+
+
+  <body>
+
+    <header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a href="/" class="logo">
+      
+      <img src="/assets/logo.png" alt="Robust Test Automation with Java">
+      
+    </a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+				
+	
+	<li class="nav-link"><a href="/about/">About</a>
+	
+
+	
+
+	
+
+	
+	<li class="nav-link"><a href="/posts/">Posts</a>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+        <div class="post">
+
+<div class="post-header-container " >
+  <div class="scrim ">
+    <header class="post-header">
+      <h1 class="title">Test Automation Framework - The main Components</h1>
+      <p class="info">by <strong>Santiago L. Schumacher</strong></p>
+    </header>
+  </div>
+</div>
+
+<div class="wrapper">
+
+ <span class="page-divider">
+  <span class="one"></span>
+  <span class="two"></span>
+</span>
+ 
+
+<section class="post-meta">
+  <div class="post-date">July 27, 2020</div>
+  <div class="post-categories">
+  in 
+    
+    <a href="/category/framework">Framework</a>
+    
+  
+  </div>
+</section>
+
+<article class="post-content">
+  <h1>Setting the right building blocks for your Framework</h1>
+
+<p>Hello everybody ! 
+In this first post about building a good, robust test automation framework, we’ll start talking about some of the most necessary components every Framework should include, much like
+building a house, we have to start with the plans and foundations first.</p>
+
+<p>If you’re feeling anxious and want to get started coding right away - feel free to jump to my next ‘Framework’ post, as this one won’t have actual code.</p>
+
+<h2> Framework Scope </h2>
+<p>The first thing we’re doing is deciding on <strong>what</strong> our framework is going to be able to do. Note that I haven’t even thought about which technology to use yet.</p>
+
+<p>Play along with my here. 
+In this fictional scenario, we’ve just started working with a new Client, exciting ! They’re eager to get started, and a bit apprehensive, as they haven’t worked 
+with a Test Automation Engineer before !
+After some discussion you convince the Client to give you a couple weeks to work on a Framework, as it will save them hundreds of headaches and more importantly maintenance costs down the road.</p>
+
+<p>You sit at your desk after a long meeting, finally ready to get started !
+You open your Notebook and find the following notes:
+<br /></p>
+
+<ul>
+  <li>Most, if not all, their applications backends are coded with Java 
+  From here we will pick the same programming language for our Framework as the devs. We could argue that any other language would do, however using the same
+  technology as the developers will make it easier to integrate part of their code into yours, reuse components, and share other valuable things.
+  In our case we'll be using Java 13, but using any version between 8 and 13 should work with minor tweaking.</li>
+  <li>They use React for the UI, with HTML and Bootstrap for the CSS. It's a standard web application. Our answer here is clear, let's use <strong>Selenium</strong>. 
+  You google 'Selenium Java latest release' and find in <a>https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java</a> that the stable version is 3.141.59 - let's stick to that one until Selenium 4 is stable enough to use on Production projects.
+  </li>
+  <li>Following the Global trend, their application is also available for iOS and Android mobile devices.
+  This is our next clue, we will need <strong>Appium</strong> integration as well. Let's add that option too.</li>
+  <li>Communication is really important for your Client. They mentioned that they spend many hours a day on <strong>Slack</strong>, and no major decisions are
+  taken without Emailing and approvals for memo.
+  That means our framework will most definitely need to send test results to both: Email and Slack.</li>
+  <li>They use <a href="https://www.browserstack.com/">BrowserStack</a> so the manual testers are able to test different browsers and mobile deviced on the cloud. We will add integration to that as well.</li>
+  <li>API and Integration tests is a must, as the Test Automation Pyramid tells us. The clear is option is here is adding the <strong>RestAssured</strong> dependency to our list.</li>
+  <li>They use Jenkins, so it's important for us to leverage everything that tool provides.</li>
+  <li>Reports: The standard reports offered by runners such as TestNG, JUnit, or Maven's Surefire plugin are simply not good enough. They can be difficult to understand, not too 
+  easy on the eyes, and most importantly: you can't immediatly tell what went wrong in failing tests! Hmm... we will figure our how to solve this later</li>
+</ul>
+
+<p>And just like that ! The day isn’t over yet and we already know most of the components, scope and functionality the framework must provide to clear the Client’s expectations.. <br />
+We’re ready to start doing some coding.</p>
+
+<p>Until the next time !</p>
+
+</article>
+
+
+
+
+
+<section class="rss">
+  <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+</section>
+
+<section class="share">
+  <span>Share: </span>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+      <a href="//www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fsantiautomation.github.io%2Fframework%2F2020%2F07%2F27%2FAutomation-Framework-Architecture.html"
+        onclick="window.open(this.href, 'linkedin-share', 'width=550,height=255');return false;">
+        <i class="fa fa-linkedin-square fa-lg"></i>
+      </a>
+    
+    
+    
+    
+  
+</section>
+
+	<section class="post-navigation">
+		<span class="prev-post">
+			
+				<a href="/miscellaneous/2020/07/25/Choosing-what-to-Automate.html">
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-square fa-stack-2x"></i>
+						<i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
+					</span>
+					<span class="page-number">Step 1: Choosing what to Automate</span>
+				</a>
+			
+		</span>
+		<span class="next-post">
+			
+				<a href="/framework/2020/08/08/First-Steps.html">
+					<span class="page-number">Getting started building your own Framework</span>
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-square fa-stack-2x"></i>
+						<i class="fa fa-angle-double-right fa-stack-1x fa-inverse"></i>
+					</span>
+				</a>
+			
+		</span>
+	</section>
+
+
+
+
+<section class="disqus">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_shortname = 'https-santiautomation-github-io';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+
+
+</div>
+</div>
+
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h3 class="footer-heading">Robust Test Automation with Java</h3>
+
+    <div class="site-navigation">
+
+      <p><strong>Site Map</strong></p>
+      <ul class="pages">
+				
+	
+	<li class="nav-link"><a href="/about/">About</a>
+	
+
+	
+
+	
+
+	
+	<li class="nav-link"><a href="/posts/">Posts</a>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+      </ul>
+    </div>
+
+    <div class="site-contact">
+
+      <p><strong>Contact</strong></p>
+      <ul class="social-media-list">
+        <li>
+          <a href="mailto:santiagoschumacher2@gmail.com">
+            <i class="fa fa-envelope-o"></i>
+            <span class="username">santiagoschumacher2@gmail.com</span>
+          </a>
+        </li>
+
+        
+          
+          <li>
+            <a href="https://github.com/santiautomation" title="Fork me on GitHub">
+              <i class="fa fa-github"></i>
+              <span class="username">sschumacher</span>
+            </a>
+          </li>
+          
+        
+          
+          <li>
+            <a href="https://www.linkedin.com/in/santiago-schumacher/" title="Connect with me on LinkedIn">
+              <i class="fa fa-linkedin"></i>
+              <span class="username">Santiago Schumacher</span>
+            </a>
+          </li>
+          
+        
+
+      </ul>
+    </div>
+
+    <div class="site-signature">
+      <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+      <p class="text">A Blog to share Test Automation best practices oriented towards complex scenarios.
+</p>
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- Scripts -->
+<script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/js/lightbox.min.js"></script>
+<script src="//unpkg.com/popper.js@1"></script>
+<script src="//unpkg.com/tippy.js@5"></script>
+<script src="/js/clipboard.min.js"></script>
+<script src="/js/codeselect.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  // Default syntax highlighting
+  hljs.initHighlightingOnLoad();
+
+  // Header
+  var menuToggle = $('#js-mobile-menu').unbind();
+  $('#js-navigation-menu').removeClass("show");
+  menuToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-navigation-menu').slideToggle(function(){
+      if($('#js-navigation-menu').is(':hidden')) {
+        $('#js-navigation-menu').removeAttr('style');
+      }
+    });
+  });
+
+	// Enable tooltips via Tippy.js
+	if (Array.isArray(window.tooltips)) {
+		window.tooltips.forEach(function(tooltip) {
+			var selector = tooltip[0];
+			var config = tooltip[1];
+			tippy(selector, config);
+		})
+	}
+});
+
+</script>
+
+
+
+
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'G-2GS3X7QMNJ', 'auto');
+  ga('send', 'pageview', {
+    'page': '/framework/2020/07/27/Automation-Framework-Architecture.html',
+    'title': 'Test Automation Framework - The main Components'
+  });
+</script>
+
+
+	
+	<form style="border:1px solid #ccc;padding:3px;text-align:center;" action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=RobustTestAutomationWithJava', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true"><p>Enter your email address to receive an email when new content is posted:</p><p><input type="text" style="width:240px;margin-left: auto;margin-right: auto;" name="email"/></p><input type="hidden" value="RobustTestAutomationWithJava" name="uri"/><input type="hidden" name="loc" value="en_US"/><input type="submit" value="Subscribe" /><p>Delivered by <a href="https://feedburner.google.com" target="_blank">FeedBurner</a></p></form>
+	
+  </body>
+
+</html>

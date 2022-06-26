@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2GS3X7QMNJ"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'G-2GS3X7QMNJ');
+	</script>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Step 1: Choosing what to Automate</title>
+  <meta name="description" content="During my career, I’ve performed multiple interviews to aspiring Test Automation Engineers. They’ve ranged from IT people such as programmers or manual teste...">
+  
+  <meta name="author" content="Santiago Lorenzo Schumacher">
+  <meta name="copyright" content="&copy; Santiago Lorenzo Schumacher 2022">
+  
+
+  <!-- External libraries -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/monokai-sublime.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">
+
+  <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+  <link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  
+  <!-- Facebook OGP cards -->
+  <meta property="og:description" content="During my career, I’ve performed multiple interviews to aspiring Test Automation Engineers. They’ve ranged from IT people such as programmers or manual teste..." />
+  <meta property="og:url" content="https://santiautomation.github.io/miscellaneous/2020/07/25/Choosing-what-to-Automate.html">
+  <meta property="og:site_name" content="Robust Test Automation with Java" />
+  <meta property="og:title" content="Step 1: Choosing what to Automate" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://santiautomation.github.io/assets/logo.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="632" />
+  <meta property="og:image:height" content="625" />
+  
+
+  
+  <!-- Twitter: card tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Step 1: Choosing what to Automate">
+  <meta name="twitter:description" content="During my career, I’ve performed multiple interviews to aspiring Test Automation Engineers. They’ve ranged from IT people such as programmers or manual teste...">
+  <meta name="twitter:image" content="https://santiautomation.github.io/assets/logo.png">
+  <meta name="twitter:url" content="https://santiautomation.github.io/miscellaneous/2020/07/25/Choosing-what-to-Automate.html">
+  
+
+  
+
+  
+  
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Step 1: Choosing what to Automate | Robust Test Automation with Java</title>
+<meta name="generator" content="Jekyll v3.9.2" />
+<meta property="og:title" content="Step 1: Choosing what to Automate" />
+<meta name="author" content="Santiago L. Schumacher" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="During my career, I’ve performed multiple interviews to aspiring Test Automation Engineers. They’ve ranged from IT people such as programmers or manual testers, looking to search for a new vocation, to people with many years on the field." />
+<meta property="og:description" content="During my career, I’ve performed multiple interviews to aspiring Test Automation Engineers. They’ve ranged from IT people such as programmers or manual testers, looking to search for a new vocation, to people with many years on the field." />
+<link rel="canonical" href="https://santiautomation.github.io/miscellaneous/2020/07/25/Choosing-what-to-Automate.html" />
+<meta property="og:url" content="https://santiautomation.github.io/miscellaneous/2020/07/25/Choosing-what-to-Automate.html" />
+<meta property="og:site_name" content="Robust Test Automation with Java" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-07-25T16:25:52-03:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Step 1: Choosing what to Automate" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Santiago L. Schumacher"},"dateModified":"2020-07-25T16:25:52-03:00","datePublished":"2020-07-25T16:25:52-03:00","description":"During my career, I’ve performed multiple interviews to aspiring Test Automation Engineers. They’ve ranged from IT people such as programmers or manual testers, looking to search for a new vocation, to people with many years on the field.","headline":"Step 1: Choosing what to Automate","mainEntityOfPage":{"@type":"WebPage","@id":"https://santiautomation.github.io/miscellaneous/2020/07/25/Choosing-what-to-Automate.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://santiautomation.github.io/assets/logo.png"},"name":"Santiago L. Schumacher"},"url":"https://santiautomation.github.io/miscellaneous/2020/07/25/Choosing-what-to-Automate.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+	
+  <!-- Site styles -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="https://santiautomation.github.io/miscellaneous/2020/07/25/Choosing-what-to-Automate.html">
+	<link rel="alternate" type="application/rss+xml" title="Robust Test Automation with Java" href="https://santiautomation.github.io/feed.xml" />
+	
+	<!-- Tooltips -->
+	<script type="text/javascript">
+		window.tooltips = []
+	</script>
+</head>
+
+
+  <body>
+
+    <header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a href="/" class="logo">
+      
+      <img src="/assets/logo.png" alt="Robust Test Automation with Java">
+      
+    </a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+				
+	
+	<li class="nav-link"><a href="/about/">About</a>
+	
+
+	
+
+	
+
+	
+	<li class="nav-link"><a href="/posts/">Posts</a>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+        <div class="post">
+
+<div class="post-header-container " >
+  <div class="scrim ">
+    <header class="post-header">
+      <h1 class="title">Step 1: Choosing what to Automate</h1>
+      <p class="info">by <strong>Santiago L. Schumacher</strong></p>
+    </header>
+  </div>
+</div>
+
+<div class="wrapper">
+
+ <span class="page-divider">
+  <span class="one"></span>
+  <span class="two"></span>
+</span>
+ 
+
+<section class="post-meta">
+  <div class="post-date">July 25, 2020</div>
+  <div class="post-categories">
+  in 
+    
+    <a href="/category/miscellaneous">Miscellaneous</a>
+    
+  
+  </div>
+</section>
+
+<article class="post-content">
+  <p>During my career, I’ve performed multiple interviews to aspiring Test Automation Engineers. They’ve ranged from IT people such as programmers or manual testers, looking 
+to search for a new vocation, to people with many years on the field.</p>
+
+<p>One question that I always enjoy to ask is:</p>
+
+<p><i>Which criteria would you choose to prioritize a large list of Test Cases for Automation ? </i></p>
+
+<p>The first answers I get are almost always the same one:</p>
+
+<ul>
+  <li>Business-critical test cases</li>
+  <li>Highly repetitive tests, such as smokes or sanity tests that needs to be executed after every build</li>
+ </ul>
+
+<p>Well…. yes, of course ! Those 2 options should always be your think thought when thinking about Automation candidates.</p>
+
+<p>However, there are other things to be considered.</p>
+
+<p>I want you to keep one thing in mind: One of the main reasons for the role is <i>efficiency</i>. 
+<br /></p>
+<ensp>Cut down on testing time<br />
+<ensp>Saving money<br />
+<ensp>Avoiding costly manual oversights or errors<br /><br />
+
+In other words we're aiming to maximize the company's <strong> Return of Investment </strong>
+
+The following list provides guidance on how to increase your RoI.
+<br />
+
+<ul>
+  <li>Tests that are simple, but needs to be executed in multiple configurations, ie: Tested against multiple browsers, Operating Systems, Mobile devices.</li>
+  <li>Easely parameterized tests. These includes test cases that must be repeated several times using different inputs, which are fast to develop through Data Providers.</li>
+  <li>Test cases that are error prone: This includes high-complexity mathematical formulas or other deterministic operations, that once coded, you'll guarantee they will always work the way you programmed it</li>
+  <li>Data setup, environment configuration and other general tasks that are not necessarily Test Cases, but can be leveraged with the use of Programming and Selenium. <i> PS: We will go back to this subject on a different Post later, as there are many important things to talk about here</i></li>
+  <li>Other relevant options might show up here that are intrinsic to your particular organization, so, keep your eyes open and be sure to talk to QA and business owners and walk on their shoes for a few days</li>
+</ul>
+
+Thanks for reading, until the next time,
+Santiago.
+</ensp></ensp></ensp>
+
+</article>
+
+
+
+
+
+<section class="rss">
+  <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+</section>
+
+<section class="share">
+  <span>Share: </span>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+      <a href="//www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fsantiautomation.github.io%2Fmiscellaneous%2F2020%2F07%2F25%2FChoosing-what-to-Automate.html"
+        onclick="window.open(this.href, 'linkedin-share', 'width=550,height=255');return false;">
+        <i class="fa fa-linkedin-square fa-lg"></i>
+      </a>
+    
+    
+    
+    
+  
+</section>
+
+	<section class="post-navigation">
+		<span class="prev-post">
+			
+				<a href="/introduction/2020/06/01/Welcome-First-Post.html">
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-square fa-stack-2x"></i>
+						<i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
+					</span>
+					<span class="page-number">Welcome - First Post</span>
+				</a>
+			
+		</span>
+		<span class="next-post">
+			
+				<a href="/framework/2020/07/27/Automation-Framework-Architecture.html">
+					<span class="page-number">Test Automation Framework - The main Components</span>
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-square fa-stack-2x"></i>
+						<i class="fa fa-angle-double-right fa-stack-1x fa-inverse"></i>
+					</span>
+				</a>
+			
+		</span>
+	</section>
+
+
+
+
+<section class="disqus">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_shortname = 'https-santiautomation-github-io';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+
+
+</div>
+</div>
+
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h3 class="footer-heading">Robust Test Automation with Java</h3>
+
+    <div class="site-navigation">
+
+      <p><strong>Site Map</strong></p>
+      <ul class="pages">
+				
+	
+	<li class="nav-link"><a href="/about/">About</a>
+	
+
+	
+
+	
+
+	
+	<li class="nav-link"><a href="/posts/">Posts</a>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+      </ul>
+    </div>
+
+    <div class="site-contact">
+
+      <p><strong>Contact</strong></p>
+      <ul class="social-media-list">
+        <li>
+          <a href="mailto:santiagoschumacher2@gmail.com">
+            <i class="fa fa-envelope-o"></i>
+            <span class="username">santiagoschumacher2@gmail.com</span>
+          </a>
+        </li>
+
+        
+          
+          <li>
+            <a href="https://github.com/santiautomation" title="Fork me on GitHub">
+              <i class="fa fa-github"></i>
+              <span class="username">sschumacher</span>
+            </a>
+          </li>
+          
+        
+          
+          <li>
+            <a href="https://www.linkedin.com/in/santiago-schumacher/" title="Connect with me on LinkedIn">
+              <i class="fa fa-linkedin"></i>
+              <span class="username">Santiago Schumacher</span>
+            </a>
+          </li>
+          
+        
+
+      </ul>
+    </div>
+
+    <div class="site-signature">
+      <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+      <p class="text">A Blog to share Test Automation best practices oriented towards complex scenarios.
+</p>
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- Scripts -->
+<script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/js/lightbox.min.js"></script>
+<script src="//unpkg.com/popper.js@1"></script>
+<script src="//unpkg.com/tippy.js@5"></script>
+<script src="/js/clipboard.min.js"></script>
+<script src="/js/codeselect.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  // Default syntax highlighting
+  hljs.initHighlightingOnLoad();
+
+  // Header
+  var menuToggle = $('#js-mobile-menu').unbind();
+  $('#js-navigation-menu').removeClass("show");
+  menuToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-navigation-menu').slideToggle(function(){
+      if($('#js-navigation-menu').is(':hidden')) {
+        $('#js-navigation-menu').removeAttr('style');
+      }
+    });
+  });
+
+	// Enable tooltips via Tippy.js
+	if (Array.isArray(window.tooltips)) {
+		window.tooltips.forEach(function(tooltip) {
+			var selector = tooltip[0];
+			var config = tooltip[1];
+			tippy(selector, config);
+		})
+	}
+});
+
+</script>
+
+
+
+
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'G-2GS3X7QMNJ', 'auto');
+  ga('send', 'pageview', {
+    'page': '/miscellaneous/2020/07/25/Choosing-what-to-Automate.html',
+    'title': 'Step 1: Choosing what to Automate'
+  });
+</script>
+
+
+	
+	<form style="border:1px solid #ccc;padding:3px;text-align:center;" action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=RobustTestAutomationWithJava', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true"><p>Enter your email address to receive an email when new content is posted:</p><p><input type="text" style="width:240px;margin-left: auto;margin-right: auto;" name="email"/></p><input type="hidden" value="RobustTestAutomationWithJava" name="uri"/><input type="hidden" name="loc" value="en_US"/><input type="submit" value="Subscribe" /><p>Delivered by <a href="https://feedburner.google.com" target="_blank">FeedBurner</a></p></form>
+	
+  </body>
+
+</html>

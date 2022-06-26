@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2GS3X7QMNJ"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'G-2GS3X7QMNJ');
+	</script>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Driver Factory</title>
+  <meta name="description" content="Factory Pattern for Selenium WebDriver">
+  
+  <meta name="author" content="Santiago Lorenzo Schumacher">
+  <meta name="copyright" content="&copy; Santiago Lorenzo Schumacher 2022">
+  
+
+  <!-- External libraries -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/monokai-sublime.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">
+
+  <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+  <link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  
+  <!-- Facebook OGP cards -->
+  <meta property="og:description" content="Factory Pattern for Selenium WebDriver" />
+  <meta property="og:url" content="https://santiautomation.github.io/framework/2020/08/14/Driver-Factory.html">
+  <meta property="og:site_name" content="Robust Test Automation with Java" />
+  <meta property="og:title" content="Driver Factory" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://santiautomation.github.io/assets/logo.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="632" />
+  <meta property="og:image:height" content="625" />
+  
+
+  
+  <!-- Twitter: card tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Driver Factory">
+  <meta name="twitter:description" content="Factory Pattern for Selenium WebDriver">
+  <meta name="twitter:image" content="https://santiautomation.github.io/assets/logo.png">
+  <meta name="twitter:url" content="https://santiautomation.github.io/framework/2020/08/14/Driver-Factory.html">
+  
+
+  
+
+  
+  
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Driver Factory | Robust Test Automation with Java</title>
+<meta name="generator" content="Jekyll v3.9.2" />
+<meta property="og:title" content="Driver Factory" />
+<meta name="author" content="Santiago L. Schumacher" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Factory Pattern for Selenium WebDriver" />
+<meta property="og:description" content="Factory Pattern for Selenium WebDriver" />
+<link rel="canonical" href="https://santiautomation.github.io/framework/2020/08/14/Driver-Factory.html" />
+<meta property="og:url" content="https://santiautomation.github.io/framework/2020/08/14/Driver-Factory.html" />
+<meta property="og:site_name" content="Robust Test Automation with Java" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-08-14T16:25:52-03:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Driver Factory" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Santiago L. Schumacher"},"dateModified":"2020-08-14T16:25:52-03:00","datePublished":"2020-08-14T16:25:52-03:00","description":"Factory Pattern for Selenium WebDriver","headline":"Driver Factory","mainEntityOfPage":{"@type":"WebPage","@id":"https://santiautomation.github.io/framework/2020/08/14/Driver-Factory.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://santiautomation.github.io/assets/logo.png"},"name":"Santiago L. Schumacher"},"url":"https://santiautomation.github.io/framework/2020/08/14/Driver-Factory.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+	
+  <!-- Site styles -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="https://santiautomation.github.io/framework/2020/08/14/Driver-Factory.html">
+	<link rel="alternate" type="application/rss+xml" title="Robust Test Automation with Java" href="https://santiautomation.github.io/feed.xml" />
+	
+	<!-- Tooltips -->
+	<script type="text/javascript">
+		window.tooltips = []
+	</script>
+</head>
+
+
+  <body>
+
+    <header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a href="/" class="logo">
+      
+      <img src="/assets/logo.png" alt="Robust Test Automation with Java">
+      
+    </a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+				
+	
+	<li class="nav-link"><a href="/about/">About</a>
+	
+
+	
+
+	
+
+	
+	<li class="nav-link"><a href="/posts/">Posts</a>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+        <div class="post">
+
+<div class="post-header-container " >
+  <div class="scrim ">
+    <header class="post-header">
+      <h1 class="title">Driver Factory</h1>
+      <p class="info">by <strong>Santiago L. Schumacher</strong></p>
+    </header>
+  </div>
+</div>
+
+<div class="wrapper">
+
+ <span class="page-divider">
+  <span class="one"></span>
+  <span class="two"></span>
+</span>
+ 
+
+<section class="post-meta">
+  <div class="post-date">August 14, 2020</div>
+  <div class="post-categories">
+  in 
+    
+    <a href="/category/framework">Framework</a>
+    
+  
+  </div>
+</section>
+
+<article class="post-content">
+  <h1>Factory Pattern for Selenium WebDriver</h1>
+
+<p>On my previous posts we initialized a new maven Project, and added the dependencies we will need for our Framework.
+Now we can get started with the main functionality of any Test Automation Framework, being able to create WebDriver instances
+to interact with your Applications.</p>
+
+<p>Let’s get started with the basics, first, we need a way to easily choose between our favourite Browser (Chrome, Firefox, Edge …) and change the URL of our
+application depending on the environment.</p>
+
+<h3>We'll use</h3>
+<ol>
+  <li>Factory design pattern: A popular OOP pattern that allows for easier extension and decoupled code, where only the concrete classes need to know exactly <strong>how</strong> (logic) to create a new Instance.
+  This helps create a really simple one-line-of-code way to create your WebDriver instance. This is our main focus on this post.</li>
+  <li>Maven Profiles that will help us run test suites against different URL's in an easy way. We will cover this on subsequent posts</li>
+</ol>
+
+<h3> Implementing Factory Pattern </h3>
+<p>Start by creating new packages in our project, right click on <code>src/main/java</code>, go to New -&gt; Package and create:</p>
+<ol>
+  <li>drivers </li>
+  <li>testrunner</li>
+</ol>
+
+<p>You can name them as you wish of course, but always keep in mind that the idea of packages are to group similar classes/functionality inside specific folders to keep everything neatly organized and easy to find.</p>
+
+<p>We want the following classes inside the <code>drivers</code> package:</p>
+
+<p><br />
+<img src="/assets/images/Factory.PNG" alt="Factory Pattern with Selenium" />
+<br /></p>
+
+<p>Now, let’s go one by one.</p>
+
+<p><strong>DriverManager (Abstract Class)</strong></p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">driver</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.util.concurrent.TimeUnit</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">org.openqa.selenium.WebDriver</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">logging.Logging</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">utils.Architecture</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">DriverManager</span> <span class="o">{</span>
+
+	<span class="kd">protected</span> <span class="nc">ThreadLocal</span><span class="o">&lt;</span><span class="nc">WebDriver</span><span class="o">&gt;</span> <span class="n">drivers</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ThreadLocal</span><span class="o">&lt;&gt;();</span>
+	<span class="kd">protected</span> <span class="kd">abstract</span> <span class="nc">WebDriver</span> <span class="nf">createDriver</span><span class="o">();</span>
+	
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">quitDriver</span><span class="o">()</span> <span class="o">{</span>
+		<span class="k">if</span> <span class="o">(</span><span class="kc">null</span> <span class="o">!=</span> <span class="n">drivers</span><span class="o">.</span><span class="na">get</span><span class="o">())</span> <span class="o">{</span>
+			<span class="k">try</span> <span class="o">{</span>
+				<span class="n">drivers</span><span class="o">.</span><span class="na">get</span><span class="o">().</span><span class="na">quit</span><span class="o">();</span> <span class="c1">// First quit WebDriver session gracefully</span>
+				<span class="n">drivers</span><span class="o">.</span><span class="na">remove</span><span class="o">();</span> <span class="c1">// Remove WebDriver reference from the ThreadLocal variable.</span>
+			<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+				<span class="nc">System</span><span class="o">.</span><span class="na">err</span><span class="o">(</span><span class="s">"Unable to gracefully quit WebDriver."</span><span class="o">,</span> <span class="n">e</span><span class="o">);</span> <span class="c1">// We'll replace this with actual Loggers later - don't worry !</span>
+			<span class="o">}</span>
+			
+		<span class="o">}</span>
+	<span class="o">}</span>
+	
+	<span class="kd">public</span> <span class="nc">WebDriver</span> <span class="nf">getDriver</span><span class="o">()</span> <span class="o">{</span>
+		<span class="k">if</span> <span class="o">(</span><span class="kc">null</span> <span class="o">==</span> <span class="n">drivers</span><span class="o">.</span><span class="na">get</span><span class="o">())</span> <span class="o">{</span>
+			<span class="n">drivers</span><span class="o">.</span><span class="na">set</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">createDriver</span><span class="o">());</span>
+		<span class="o">}</span>
+		<span class="n">drivers</span><span class="o">.</span><span class="na">get</span><span class="o">().</span><span class="na">manage</span><span class="o">().</span><span class="na">timeouts</span><span class="o">().</span><span class="na">implicitlyWait</span><span class="o">(</span><span class="mi">1L</span><span class="o">,</span> <span class="nc">TimeUnit</span><span class="o">.</span><span class="na">SECONDS</span><span class="o">);</span>
+		
+		<span class="k">return</span> <span class="n">drivers</span><span class="o">.</span><span class="na">get</span><span class="o">();</span>
+	<span class="o">}</span>
+<span class="o">}</span></code></pre></figure>
+
+<p><br /></p>
+
+<p>And the <strong>DriverFactory</strong>, which is an enum, containing all the concrete implementations for every Browser.
+We can use methods inside the enum. These will make calling the Factory extremely simple !
+If we want to create an instance of Chrome Driver, we can just type <code> DriverFactory.CHROME </code> and we’re good to go, sounds simple, right ?
+The only caveat is that implementation (adding new Browsers) can get a little tricky.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">driver</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">enum</span> <span class="nc">DriverFactory</span> <span class="o">{</span>
+
+	<span class="no">CHROME</span> <span class="o">{</span> 
+		<span class="nd">@Override</span>
+		<span class="kd">public</span> <span class="nc">DriverManager</span> <span class="nf">getDriverManager</span><span class="o">()</span> <span class="o">{</span>
+			<span class="k">return</span> <span class="k">new</span> <span class="nf">ChromeDriverManager</span><span class="o">();</span>
+		<span class="o">}</span>
+	<span class="o">},</span>
+	<span class="no">FIREFOX</span> <span class="o">{</span>
+		<span class="nd">@Override</span>
+		<span class="kd">public</span> <span class="nc">DriverManager</span> <span class="nf">getDriverManager</span><span class="o">()</span> <span class="o">{</span>
+			<span class="k">return</span> <span class="k">new</span> <span class="nf">FirefoxDriverManager</span><span class="o">();</span>
+		<span class="o">}</span>
+	<span class="o">};</span>
+	
+	<span class="kd">public</span> <span class="kd">abstract</span> <span class="nc">DriverManager</span> <span class="nf">getDriverManager</span><span class="o">();</span>
+<span class="o">}</span></code></pre></figure>
+
+<p><br />
+Finally, the implementations. I’ll show ChromeDriver for now, since the rest of them are very similar:</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">driver</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">static</span> <span class="n">io</span><span class="o">.</span><span class="na">github</span><span class="o">.</span><span class="na">bonigarcia</span><span class="o">.</span><span class="na">wdm</span><span class="o">.</span><span class="na">DriverManagerType</span><span class="o">.</span><span class="na">CHROME</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">org.openqa.selenium.WebDriver</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.openqa.selenium.chrome.ChromeDriver</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.openqa.selenium.chrome.ChromeOptions</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">io.github.bonigarcia.wdm.WebDriverManager</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ChromeDriverManager</span> <span class="kd">extends</span> <span class="nc">DriverManager</span> <span class="o">{</span>
+	
+	<span class="nd">@Override</span>
+	<span class="kd">protected</span> <span class="nc">WebDriver</span> <span class="nf">createDriver</span><span class="o">()</span> <span class="o">{</span>
+		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Initializing Chrome Driver"</span><span class="o">);</span> <span class="c1">// Change to Loggers</span>
+		<span class="nc">WebDriverManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="no">CHROME</span><span class="o">).</span><span class="na">setup</span><span class="o">();</span>
+	
+		<span class="k">return</span> <span class="k">new</span> <span class="nf">ChromeDriver</span><span class="o">(</span><span class="n">getChromeOptions</span><span class="o">());</span>
+	<span class="o">}</span>
+
+	<span class="kd">private</span> <span class="nc">ChromeOptions</span> <span class="nf">getChromeOptions</span><span class="o">()</span> <span class="o">{</span>
+		<span class="c1">// A few valid Options for Chrome, showcase purpose.</span>
+		<span class="nc">ChromeOptions</span> <span class="n">options</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ChromeOptions</span><span class="o">();</span>
+		<span class="n">options</span><span class="o">.</span><span class="na">addArguments</span><span class="o">(</span><span class="s">"--disable-notifications"</span><span class="o">);</span>
+		<span class="n">options</span><span class="o">.</span><span class="na">addArguments</span><span class="o">(</span><span class="s">"--start-maximized"</span><span class="o">);</span>
+		<span class="n">options</span><span class="o">.</span><span class="na">addArguments</span><span class="o">(</span><span class="s">"--disable-features=EnableEphemeralFlashPermission"</span><span class="o">);</span>
+		<span class="n">options</span><span class="o">.</span><span class="na">addArguments</span><span class="o">(</span><span class="s">"--disable-infobars"</span><span class="o">);</span>
+
+		<span class="k">return</span> <span class="n">options</span><span class="o">;</span>
+	<span class="o">}</span>
+
+<span class="o">}</span></code></pre></figure>
+
+<p>Ok, looks like we have everything in place to create Selenium WebDriver instances, and now you might be wondering:</p>
+<ol>
+	<li> My Client needs me to test with with Opera !! Your enum only mentions Chrome or Firefox ! To solve this you: 
+		<ul>
+			<li> Create a new concrete class that extends DriverManager. Call it OperaDriverManager. Replace <code>WebDriverManager.getInstance(CHROME)</code>
+			with <code>WebDriverManager.getInstance(OPERA)</code> -- remember to change the static import as well -- and the return line to <code>return new OperaDriver()</code></li>
+			<li> On the <strong>DriverFactory</strong> enum, add the following:
+		
+<figure class="highlight"><pre><code class="language-java" data-lang="java">	<span class="no">OPERA</span> <span class="o">{</span>
+		<span class="nd">@Override</span>
+		<span class="kd">public</span> <span class="nc">DriverManager</span> <span class="nf">getDriverManager</span><span class="o">()</span> <span class="o">{</span>
+			<span class="k">return</span> <span class="k">new</span> <span class="nf">OperaDriverManager</span><span class="o">();</span>
+		<span class="o">}</span>
+	<span class="o">}</span>
+		</code></pre></figure>
+
+			</li>
+		</ul>
+	</li>
+	<li> "This looks cool but, how do I use it ?" - Well this one is easy. Before starting our tests we call <code>DriverFactory.valueOf(driverName).getDriverManager()</code>.
+	Replace the "driverName" with "CHROME", or "FIREFOX", or any other implementation you might have coded yourself. </li>
+</ol>
+
+<p><br />
+Thank you for sticking with me, and see you in the next post.</p>
+
+
+</article>
+
+
+
+
+
+<section class="rss">
+  <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+</section>
+
+<section class="share">
+  <span>Share: </span>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+      <a href="//www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fsantiautomation.github.io%2Fframework%2F2020%2F08%2F14%2FDriver-Factory.html"
+        onclick="window.open(this.href, 'linkedin-share', 'width=550,height=255');return false;">
+        <i class="fa fa-linkedin-square fa-lg"></i>
+      </a>
+    
+    
+    
+    
+  
+</section>
+
+	<section class="post-navigation">
+		<span class="prev-post">
+			
+				<a href="/framework/2020/08/08/First-Steps.html">
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-square fa-stack-2x"></i>
+						<i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
+					</span>
+					<span class="page-number">Getting started building your own Framework</span>
+				</a>
+			
+		</span>
+		<span class="next-post">
+			
+				<a href="/miscellaneous/2020/08/15/Selenium-Locator-Strategies.html">
+					<span class="page-number">Effective Locators in Selenium</span>
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-square fa-stack-2x"></i>
+						<i class="fa fa-angle-double-right fa-stack-1x fa-inverse"></i>
+					</span>
+				</a>
+			
+		</span>
+	</section>
+
+
+
+
+<section class="disqus">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_shortname = 'https-santiautomation-github-io';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+
+
+</div>
+</div>
+
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h3 class="footer-heading">Robust Test Automation with Java</h3>
+
+    <div class="site-navigation">
+
+      <p><strong>Site Map</strong></p>
+      <ul class="pages">
+				
+	
+	<li class="nav-link"><a href="/about/">About</a>
+	
+
+	
+
+	
+
+	
+	<li class="nav-link"><a href="/posts/">Posts</a>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+      </ul>
+    </div>
+
+    <div class="site-contact">
+
+      <p><strong>Contact</strong></p>
+      <ul class="social-media-list">
+        <li>
+          <a href="mailto:santiagoschumacher2@gmail.com">
+            <i class="fa fa-envelope-o"></i>
+            <span class="username">santiagoschumacher2@gmail.com</span>
+          </a>
+        </li>
+
+        
+          
+          <li>
+            <a href="https://github.com/santiautomation" title="Fork me on GitHub">
+              <i class="fa fa-github"></i>
+              <span class="username">sschumacher</span>
+            </a>
+          </li>
+          
+        
+          
+          <li>
+            <a href="https://www.linkedin.com/in/santiago-schumacher/" title="Connect with me on LinkedIn">
+              <i class="fa fa-linkedin"></i>
+              <span class="username">Santiago Schumacher</span>
+            </a>
+          </li>
+          
+        
+
+      </ul>
+    </div>
+
+    <div class="site-signature">
+      <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+      <p class="text">A Blog to share Test Automation best practices oriented towards complex scenarios.
+</p>
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- Scripts -->
+<script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/js/lightbox.min.js"></script>
+<script src="//unpkg.com/popper.js@1"></script>
+<script src="//unpkg.com/tippy.js@5"></script>
+<script src="/js/clipboard.min.js"></script>
+<script src="/js/codeselect.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  // Default syntax highlighting
+  hljs.initHighlightingOnLoad();
+
+  // Header
+  var menuToggle = $('#js-mobile-menu').unbind();
+  $('#js-navigation-menu').removeClass("show");
+  menuToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-navigation-menu').slideToggle(function(){
+      if($('#js-navigation-menu').is(':hidden')) {
+        $('#js-navigation-menu').removeAttr('style');
+      }
+    });
+  });
+
+	// Enable tooltips via Tippy.js
+	if (Array.isArray(window.tooltips)) {
+		window.tooltips.forEach(function(tooltip) {
+			var selector = tooltip[0];
+			var config = tooltip[1];
+			tippy(selector, config);
+		})
+	}
+});
+
+</script>
+
+
+
+
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'G-2GS3X7QMNJ', 'auto');
+  ga('send', 'pageview', {
+    'page': '/framework/2020/08/14/Driver-Factory.html',
+    'title': 'Driver Factory'
+  });
+</script>
+
+
+	
+	<form style="border:1px solid #ccc;padding:3px;text-align:center;" action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=RobustTestAutomationWithJava', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true"><p>Enter your email address to receive an email when new content is posted:</p><p><input type="text" style="width:240px;margin-left: auto;margin-right: auto;" name="email"/></p><input type="hidden" value="RobustTestAutomationWithJava" name="uri"/><input type="hidden" name="loc" value="en_US"/><input type="submit" value="Subscribe" /><p>Delivered by <a href="https://feedburner.google.com" target="_blank">FeedBurner</a></p></form>
+	
+  </body>
+
+</html>

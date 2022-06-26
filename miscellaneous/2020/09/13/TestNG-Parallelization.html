@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2GS3X7QMNJ"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'G-2GS3X7QMNJ');
+	</script>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Parallelization with TestNG</title>
+  <meta name="description" content="Why Parallelization?">
+  
+  <meta name="author" content="Santiago Lorenzo Schumacher">
+  <meta name="copyright" content="&copy; Santiago Lorenzo Schumacher 2022">
+  
+
+  <!-- External libraries -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/monokai-sublime.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">
+
+  <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+  <link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  
+  <!-- Facebook OGP cards -->
+  <meta property="og:description" content="Why Parallelization?" />
+  <meta property="og:url" content="https://santiautomation.github.io/miscellaneous/2020/09/13/TestNG-Parallelization.html">
+  <meta property="og:site_name" content="Robust Test Automation with Java" />
+  <meta property="og:title" content="Parallelization with TestNG" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://santiautomation.github.io/assets/logo.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="632" />
+  <meta property="og:image:height" content="625" />
+  
+
+  
+  <!-- Twitter: card tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Parallelization with TestNG">
+  <meta name="twitter:description" content="Why Parallelization?">
+  <meta name="twitter:image" content="https://santiautomation.github.io/assets/logo.png">
+  <meta name="twitter:url" content="https://santiautomation.github.io/miscellaneous/2020/09/13/TestNG-Parallelization.html">
+  
+
+  
+
+  
+  
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Parallelization with TestNG | Robust Test Automation with Java</title>
+<meta name="generator" content="Jekyll v3.9.2" />
+<meta property="og:title" content="Parallelization with TestNG" />
+<meta name="author" content="Santiago L. Schumacher" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Why Parallelization?" />
+<meta property="og:description" content="Why Parallelization?" />
+<link rel="canonical" href="https://santiautomation.github.io/miscellaneous/2020/09/13/TestNG-Parallelization.html" />
+<meta property="og:url" content="https://santiautomation.github.io/miscellaneous/2020/09/13/TestNG-Parallelization.html" />
+<meta property="og:site_name" content="Robust Test Automation with Java" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-09-13T00:00:52-03:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Parallelization with TestNG" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Santiago L. Schumacher"},"dateModified":"2020-09-13T00:00:52-03:00","datePublished":"2020-09-13T00:00:52-03:00","description":"Why Parallelization?","headline":"Parallelization with TestNG","mainEntityOfPage":{"@type":"WebPage","@id":"https://santiautomation.github.io/miscellaneous/2020/09/13/TestNG-Parallelization.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://santiautomation.github.io/assets/logo.png"},"name":"Santiago L. Schumacher"},"url":"https://santiautomation.github.io/miscellaneous/2020/09/13/TestNG-Parallelization.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+	
+  <!-- Site styles -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="https://santiautomation.github.io/miscellaneous/2020/09/13/TestNG-Parallelization.html">
+	<link rel="alternate" type="application/rss+xml" title="Robust Test Automation with Java" href="https://santiautomation.github.io/feed.xml" />
+	
+	<!-- Tooltips -->
+	<script type="text/javascript">
+		window.tooltips = []
+	</script>
+</head>
+
+
+  <body>
+
+    <header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a href="/" class="logo">
+      
+      <img src="/assets/logo.png" alt="Robust Test Automation with Java">
+      
+    </a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+				
+	
+	<li class="nav-link"><a href="/about/">About</a>
+	
+
+	
+
+	
+
+	
+	<li class="nav-link"><a href="/posts/">Posts</a>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+        <div class="post">
+
+<div class="post-header-container " >
+  <div class="scrim ">
+    <header class="post-header">
+      <h1 class="title">Parallelization with TestNG</h1>
+      <p class="info">by <strong>Santiago L. Schumacher</strong></p>
+    </header>
+  </div>
+</div>
+
+<div class="wrapper">
+
+ <span class="page-divider">
+  <span class="one"></span>
+  <span class="two"></span>
+</span>
+ 
+
+<section class="post-meta">
+  <div class="post-date">September 13, 2020</div>
+  <div class="post-categories">
+  in 
+    
+    <a href="/category/miscellaneous">Miscellaneous</a>
+    
+  
+  </div>
+</section>
+
+<article class="post-content">
+  <h2>Why Parallelization?</h2>
+
+<p>Parallelization is the notion of executing more than one test at the same time, exponentially decreasing the amount of time needed to run your test suite/s.
+This can be achieved in your local computer, in a server with Jenkins or similar, or in several nodes (computers running Selenium instances) through Selenium Grid. <br /></p>
+
+<p>We live in a time where managers and users expect some fast changes to applications functionality. This is almost impossible to achieve without a good Test Automation Regression,
+as big changes can break the application in unexpected places, even when parts of the application being modified seems disconnected at first glance.
+Now, if we need to wait 12 hours (for example) for your tests to complete, it’s not ideal, and can almost defeat the purpose of Automation. <br /><br />
+We must decrease the test time, and the most obvious and easiest answer is adding parallelization, to execute 2, 5, or 50 and sometimes more tests at the same time, but it’s not our only option.
+You can also think about: <br /></p>
+
+<ul>
+  <li>Using explicit Waits only, with timeouts that makes sense and are tested. Do not randomly and generically use "30 seconds" for very element.</li>
+  <li>Keep your tests concise and to the point, do not add extra navigation steps and validations that are not needed or already taken care of in other tests. </li>
+  <li>Find workarounds and shortcuts. For example, not every single test needs to go through the login process. You can set Cookies at the start of the session and start at the home page or even further along by using the right URLs</li>
+  <li>Use API calls where possible and only test in the UI what needs to be tested.</li>
+  <li>Possible some more options that I can't think of right now :)</li>
+</ul>
+
+<p><br />
+Althought it seems exciting at first, there are some things you need to keep in mind before jumping in on parallelization, and it’s that Selenium is not Thread-safe by default,
+so you will need to deal with that yourself, and that your application might have cases where its state is being modified at the same time, which will lead to false negatives, 
+so the tests must be organized accordingly to run sequentially on those cases. <br />
+Like the post title mentions, I will be showing parallel options for TestNG, but JUnit is just as capable (if not more) to do the same.</p>
+
+<h2>TestNG Internals</h2>
+
+<p>In <a href="/framework/2020/08/14/Driver-Factory.html">another post</a>, when discussing how to manage instances of Selenium WebDriver, we were very careful of how we manage Threads, and making sure 
+that a WebDriver instance is never referenced from a different thread, because it can have catastrophic results on our tests, and at the same time can be difficult to debug and fix.
+We used some helpful classes such as <code>ThreadLocal</code> and <code>ThreadGuard</code>. <br /></p>
+
+<p>Now, how do we actually create different Threads, each with its WebDriver instance ? <br />
+This is where TestNG <strong>parallel</strong> comes in.</p>
+
+<p>Before naming the options we have let’s start by explaining how TestNG deals with parallelization internally by looking at the following diagram:</p>
+
+<p><br />
+<img src="/assets/images/TestNGParallel.PNG" alt="TestNG Parallelization" />
+<br /></p>
+
+<p>With the picture in mind, let’s see what TestNG’s <a href="https://testng.org/doc/documentation-main.html#parallel-running">official documentation<a></a> has to say, and I’ll try to explain in my own words so it’s clearer.
+<br /></a></p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Parallel Type</th>
+      <th style="text-align: center">Official Documentation</th>
+      <th style="text-align: center">Meaning</th>
+      <th style="text-align: center">Observations</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">instances</td>
+      <td style="text-align: center"><i>TestNG will run all the methods in the same instance in the same thread, but two methods on two different instances will be running in different threads. </i></td>
+      <td style="text-align: center">To create more than one instance of a Test, you need to invoke your Test Class more than once, for example using <code><a href="https://www.journaldev.com/21237/testng-factory-annotation">@Factory</a></code></td>
+      <td style="text-align: center">Parallel instances will behave exactly as parallel classes, unless you’re invoking multiple instances of the same Test .java class. Overall, I would avoid this since it’s not really useful, and it’s full of <a href="https://github.com/cbeust/testng/issues/751">open defects</a></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">classes</td>
+      <td style="text-align: center"><i>TestNG will run all the methods in the same class in the same thread, but each class will be run in a separate thread. </i></td>
+      <td style="text-align: center">One thread per .java class (limited by ‘thread-count’).</td>
+      <td style="text-align: center">Works great when you are keeping one Test Method per Java class, and Classes with multiple test methods will run sequentially. You have to organize each @Test in different Classes, which can result in having too many classes.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">tests</td>
+      <td style="text-align: center"><i>TestNG will run all the methods in the same <test> tag in the same thread, but each <test> tag will be in a separate thread. This allows you to group all your classes that are not thread safe in the same <test> and guarantee they will all run in the same thread while taking advantage of TestNG using as many threads as possible to run your tests. &lt;/i&gt;</test></test></test></i></td>
+      <td style="text-align: center">TestNG ‘tests’ refer only to <test> from your testng.xml file. That means if you want more than one Thread you will need to write one <test> tag for each one.</test></test></td>
+      <td style="text-align: center"><em>Only</em> use this if you have no self-respect and are willing to deal with xml with thousand of lines. In other words, do not use this.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">methods</td>
+      <td style="text-align: center"><i>TestNG will run all your test methods in separate threads. Dependent methods will also run in separate threads but they will respect the order that you specified.</i></td>
+      <td style="text-align: center">Will spawn Threads by detecting the @Test annotations. This way you can point to packages in your testng.xml file leaving it with just a few lines and simple maintenance.</td>
+      <td style="text-align: center">The best option TestNG offers to run parallel tests.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><br />
+In summary, <em>my recommendation</em> is you can either:</p>
+
+<ol>
+	<li>Create only one @Test method in each Java Class (only have more @Test if they run sequentially), and use <strong>parallel='classes'</strong></li>
+	<li>Group the @Test methods in classes according to functionality (ie: LoginTests with many @Test methods), and use <strong>parallel='methods'</strong></li>
+</ol>
+
+<p>You can find the sample testng.xml that I have on my <a href="https://github.com/santiautomation/santi-automation-framework">framework</a> below:</p>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" &gt;</span>
+  
+<span class="nt">&lt;suite</span> <span class="na">name=</span><span class="s">"Regression"</span> <span class="na">verbose=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;listeners&gt;</span>
+        <span class="nt">&lt;listener</span> <span class="na">class-name=</span><span class="s">"testrunner.AnnotationTransformer"</span><span class="nt">/&gt;</span>
+        <span class="c">&lt;!-- You can specify as many listeners as you have here, and it will be applied to the entire suite. --&gt;</span>
+  	<span class="nt">&lt;/listeners&gt;</span>
+	<span class="nt">&lt;test</span> <span class="na">name=</span><span class="s">"Regression1"</span> <span class="na">parallel=</span><span class="s">"methods"</span> <span class="na">thread-count=</span><span class="s">"5"</span><span class="nt">&gt;</span>
+		<span class="nt">&lt;parameter</span> <span class="na">name=</span><span class="s">"driverName"</span> <span class="na">value=</span><span class="s">"CHROME"</span> <span class="nt">/&gt;</span> <span class="c">&lt;!-- Sending parameter values through testng.xml --&gt;</span>
+		<span class="nt">&lt;packages&gt;</span>
+			<span class="nt">&lt;package</span> <span class="na">name=</span><span class="s">"tests"</span> <span class="nt">/&gt;</span> <span class="c">&lt;!-- Replace with the name of the package in which your tests reside --&gt;</span>
+		<span class="nt">&lt;/packages&gt;</span>
+	<span class="nt">&lt;/test&gt;</span>
+<span class="nt">&lt;/suite&gt;</span></code></pre></figure>
+
+<p>Thanks for reading, until the next time,
+Santiago.</p>
+
+</article>
+
+
+
+
+
+<section class="rss">
+  <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+</section>
+
+<section class="share">
+  <span>Share: </span>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+      <a href="//www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fsantiautomation.github.io%2Fmiscellaneous%2F2020%2F09%2F13%2FTestNG-Parallelization.html"
+        onclick="window.open(this.href, 'linkedin-share', 'width=550,height=255');return false;">
+        <i class="fa fa-linkedin-square fa-lg"></i>
+      </a>
+    
+    
+    
+    
+  
+</section>
+
+	<section class="post-navigation">
+		<span class="prev-post">
+			
+				<a href="/framework/2020/08/22/Executing-Your-First-Test.html">
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-square fa-stack-2x"></i>
+						<i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
+					</span>
+					<span class="page-number">Executing Your First Test</span>
+				</a>
+			
+		</span>
+		<span class="next-post">
+			
+				<a href="/framework/2020/09/19/Retry-Failed-Tests-With-TestNG.html">
+					<span class="page-number">Retry Failed Tests With TestNG</span>
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-square fa-stack-2x"></i>
+						<i class="fa fa-angle-double-right fa-stack-1x fa-inverse"></i>
+					</span>
+				</a>
+			
+		</span>
+	</section>
+
+
+
+
+<section class="disqus">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_shortname = 'https-santiautomation-github-io';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+
+
+</div>
+</div>
+
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h3 class="footer-heading">Robust Test Automation with Java</h3>
+
+    <div class="site-navigation">
+
+      <p><strong>Site Map</strong></p>
+      <ul class="pages">
+				
+	
+	<li class="nav-link"><a href="/about/">About</a>
+	
+
+	
+
+	
+
+	
+	<li class="nav-link"><a href="/posts/">Posts</a>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+      </ul>
+    </div>
+
+    <div class="site-contact">
+
+      <p><strong>Contact</strong></p>
+      <ul class="social-media-list">
+        <li>
+          <a href="mailto:santiagoschumacher2@gmail.com">
+            <i class="fa fa-envelope-o"></i>
+            <span class="username">santiagoschumacher2@gmail.com</span>
+          </a>
+        </li>
+
+        
+          
+          <li>
+            <a href="https://github.com/santiautomation" title="Fork me on GitHub">
+              <i class="fa fa-github"></i>
+              <span class="username">sschumacher</span>
+            </a>
+          </li>
+          
+        
+          
+          <li>
+            <a href="https://www.linkedin.com/in/santiago-schumacher/" title="Connect with me on LinkedIn">
+              <i class="fa fa-linkedin"></i>
+              <span class="username">Santiago Schumacher</span>
+            </a>
+          </li>
+          
+        
+
+      </ul>
+    </div>
+
+    <div class="site-signature">
+      <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+      <p class="text">A Blog to share Test Automation best practices oriented towards complex scenarios.
+</p>
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- Scripts -->
+<script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/js/lightbox.min.js"></script>
+<script src="//unpkg.com/popper.js@1"></script>
+<script src="//unpkg.com/tippy.js@5"></script>
+<script src="/js/clipboard.min.js"></script>
+<script src="/js/codeselect.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  // Default syntax highlighting
+  hljs.initHighlightingOnLoad();
+
+  // Header
+  var menuToggle = $('#js-mobile-menu').unbind();
+  $('#js-navigation-menu').removeClass("show");
+  menuToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-navigation-menu').slideToggle(function(){
+      if($('#js-navigation-menu').is(':hidden')) {
+        $('#js-navigation-menu').removeAttr('style');
+      }
+    });
+  });
+
+	// Enable tooltips via Tippy.js
+	if (Array.isArray(window.tooltips)) {
+		window.tooltips.forEach(function(tooltip) {
+			var selector = tooltip[0];
+			var config = tooltip[1];
+			tippy(selector, config);
+		})
+	}
+});
+
+</script>
+
+
+
+
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'G-2GS3X7QMNJ', 'auto');
+  ga('send', 'pageview', {
+    'page': '/miscellaneous/2020/09/13/TestNG-Parallelization.html',
+    'title': 'Parallelization with TestNG'
+  });
+</script>
+
+
+	
+	<form style="border:1px solid #ccc;padding:3px;text-align:center;" action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=RobustTestAutomationWithJava', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true"><p>Enter your email address to receive an email when new content is posted:</p><p><input type="text" style="width:240px;margin-left: auto;margin-right: auto;" name="email"/></p><input type="hidden" value="RobustTestAutomationWithJava" name="uri"/><input type="hidden" name="loc" value="en_US"/><input type="submit" value="Subscribe" /><p>Delivered by <a href="https://feedburner.google.com" target="_blank">FeedBurner</a></p></form>
+	
+  </body>
+
+</html>
